@@ -1,0 +1,19 @@
+{
+    "name": "UGSolitaire.Warning.Core.Test",
+    "rootNamespace": "UGSolitaire.Warning.Core.Test",
+    "references": [
+        "UWarning.Core",
+        "UWarning.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

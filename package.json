@@ -8,10 +8,10 @@
   "author": {
     "name": "Usef Farahmand"
   },
-    "dependencies": {
+  "dependencies": {
     "com.ahengine.uhttp": "1.0.5",
     "com.ahengine.upatterns": "1.0.1",
-    "com.ahengine.uscreens":"1.0.0",
-    "com.ahengine.uscreensubmodules":"1.0.0"
+    "com.ahengine.uscreens": "1.0.0",
+    "com.ahengine.uscreensubmodules": "1.0.0"
   }
 }

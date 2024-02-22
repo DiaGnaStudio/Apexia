@@ -1,0 +1,21 @@
+{
+    "name": "UWarning",
+    "rootNamespace": "UWarning",
+    "references": [
+        "GUID:a2eef4f0c9ce71f44a018a3aef24a630",
+        "GUID:a5ddaefe1d1178e42ae5068c6fda06a2",
+        "GUID:d18d774c2b4591e40a2897b5761ec418",
+        "GUID:93f4e823ed0bc6547928c20abd443937"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

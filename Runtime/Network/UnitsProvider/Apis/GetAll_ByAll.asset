@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cf1889433062440a9819a0016fc884, type: 3}
+  m_Name: GetAll_ByAll
+  m_EditorClassIdentifier: 
+  baseCard: {fileID: 11400000, guid: a7b0f84bc9d7c394786f6e0aba328a87, type: 2}
+  headers: []
+  <URL>k__BackingField: /api/admin/units/1/all
+  <Method>k__BackingField: 0
+  <HaveAuth>k__BackingField: 1
+  <BodyJson>k__BackingField: 
+  postFields: []
+  postFormFields: []

@@ -1,0 +1,20 @@
+{
+    "name": "UWarning.View",
+    "rootNamespace": "UWarning.View",
+    "references": [
+        "GUID:93f4e823ed0bc6547928c20abd443937",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f",
+        "GUID:a5ddaefe1d1178e42ae5068c6fda06a2"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

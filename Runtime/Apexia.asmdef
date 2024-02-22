@@ -1,0 +1,23 @@
+{
+    "name": "Apexia",
+    "rootNamespace": "",
+    "references": [
+        "UScreens",
+        "UPatterns",
+        "UHTTP",
+        "Unity.TextMeshPro",
+        "MinMaxSlider",
+        "UWarning"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": false,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

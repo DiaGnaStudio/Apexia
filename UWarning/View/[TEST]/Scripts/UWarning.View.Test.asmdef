@@ -1,0 +1,20 @@
+{
+    "name": "UWarning.View.Test",
+    "rootNamespace": "UWarning.View.Test",
+    "references": [
+        "UScreens",
+        "UWarning.View",
+        "UWarning.Data"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        "nunit.framework.dll"
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
