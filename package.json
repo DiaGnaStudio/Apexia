@@ -1,0 +1,17 @@
+{
+  "name": "com.apexia.dev",
+  "version": "1.0.0",
+  "displayName": "ApexiaDev",
+  "description": "ApexiaDev",
+  "unity": "2022.3",
+  "unityRelease": "0f1",
+  "author": {
+    "name": "Usef Farahmand"
+  },
+    "dependencies": {
+    "com.ahengine.uhttp": "1.0.5",
+    "com.ahengine.upatterns": "1.0.1",
+    "com.ahengine.uscreens":"1.0.0",
+    "com.ahengine.uscreensubmodules":"1.0.0"
+  }
+}
