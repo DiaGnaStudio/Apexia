@@ -1,10 +1,11 @@
-﻿namespace Unit.SharedTypes
+﻿namespace Unit.Data
 {
     public enum Orientation
     {
         East,
         North,
         South,
-        West
+        West,
+        None
     }
 }

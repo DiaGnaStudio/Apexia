@@ -1,8 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
-namespace Unit.SharedTypes
+namespace Unit.Data
 {
     public enum UnitType
     {

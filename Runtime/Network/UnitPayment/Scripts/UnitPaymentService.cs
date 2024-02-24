@@ -11,7 +11,7 @@ namespace UnitPayment.Provider
         static UnitPaymentService() =>
             provider = UnitPaymentProvider.Load;
 
-        public static void GetById(int id, Action<UnitPaymentData> onLoadProfile, Action<string> onError)
+        public static void GetById(string id, Action<UnitPaymentData> onLoadProfile, Action<string> onError)
         {
             provider.GetById(id, Callback);
 

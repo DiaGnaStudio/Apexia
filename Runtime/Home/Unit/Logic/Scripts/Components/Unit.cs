@@ -1,46 +1,57 @@
 ﻿using System;
 using UCamSystem;
-using Unit.SharedTypes;
+using Unit.Data;
 using UnityEngine;
 
 namespace Unit.Logic.Components
 {
-    [RequireComponent(typeof(MeshRenderer))]
-    [RequireComponent(typeof(Collider))]
     internal class Unit : MonoBehaviour
     {
+        [SerializeField] private string unitId;
+        [SerializeField, Range(1, 12)] private int unitCode;
+
         [Header("Components")]
         [SerializeField] private UCamPoint ballconyCamPoint;
-        [SerializeField] private MeshRenderer meshRenderer;
-        [SerializeField] private Collider collicer;
-
-        [Header("Materials")]
-        [SerializeField] private Material matHighlight;
-        [SerializeField] private Material matSelect;
-        [SerializeField] private Material matUnselect;
+        private UnitBorderRenderer borderRenderer;
+        private UnitBodyRenderer bodyRenderer;
+        private ObjectSelect objectSelect;
 
         private const float DOUBLE_TAP_TIME = .6f;
         private float firstTapTime;
 
         private bool isShow = false;
 
-        [field: SerializeField] public UnitCard Card { get; private set; }
-
-        private Action<UnitCard> OnSelect;
+        public UnitData Data { get; private set; }
+        public bool IsInitialize { get; private set; }
+        private Action<UnitData, int, string> OnSelect;
 
         public void Awake()
         {
-            meshRenderer ??= GetComponent<MeshRenderer>();
-            collicer ??= GetComponent<BoxCollider>();
+            borderRenderer = GetComponentInChildren<UnitBorderRenderer>();
+            bodyRenderer = GetComponentInChildren<UnitBodyRenderer>();
+            objectSelect = GetComponentInChildren<ObjectSelect>();
+
+            objectSelect.SetSlick(Click);
         }
 
-        public void SetSelectAction(Action<UnitCard> action) =>
-            OnSelect = action;
+        public void SetSelectAction(Action<UnitData, int, string> onSelect) => 
+            OnSelect = onSelect;
+
+        public void LoadData(Func<string, UnitData> dataGetter)
+        {
+            Data = dataGetter(unitId);
+
+            Availabilty availability = Data.Availability;
+            bodyRenderer.Apply(availability);
+            borderRenderer.Apply(availability, false);
+
+            IsInitialize = true;
+        }
 
         public void GoToBalcony() =>
             ballconyCamPoint.Set();
 
-        private void OnMouseDown()
+        private void Click()
         {
             if (isShow) return;
 
@@ -51,9 +62,9 @@ namespace Unit.Logic.Components
 
             void Select()
             {
-                OnSelect?.Invoke(Card);
+                OnSelect?.Invoke(Data, unitCode, unitId);
                 isShow = true;
-                SetMaterial(matSelect);
+                borderRenderer.Apply(Data.Availability, true);
             }
         }
 
@@ -66,19 +77,8 @@ namespace Unit.Logic.Components
 
         public void Highlight(bool value)
         {
-            if (value)
-            {
-                SetMaterial(matHighlight);
-                collicer.enabled = true;
-            }
-            else
-            {
-                SetMaterial(matUnselect);
-                collicer.enabled = false;
-            }
+            borderRenderer.Apply(Data.Availability, false);
+            objectSelect.SetColliderAction(value);
         }
-
-        private void SetMaterial(Material mat) =>
-            meshRenderer.material = mat;
     }
 }

@@ -1,16 +1,14 @@
 ﻿using Gallery.Assets;
 using UnityEngine;
 
-namespace Unit.SharedTypes
+namespace Unit.Data
 {
-    [CreateAssetMenu(fileName = "UnitTypeCard", menuName = "Unit/TypeCard", order = 1)]
+    [CreateAssetMenu(fileName = "UnitTypeCard", menuName = "Unit/TypeCard")]
     public class UnitTypeCard : ScriptableObject
     {
         [field: SerializeField] public string Name { private set; get; }
-        [field: SerializeField] public Sprite Map { private set; get; }
-        [field: SerializeField] public Sprite Payment { private set; get; }
-        [field: SerializeField] public GalleryAsset Gallery { private set; get; }
         [field: SerializeField] public UnitType Type { private set; get; }
+        [field: SerializeField] public GalleryAsset Gallery { private set; get; }
         [field: SerializeField] public GameObject DollHousePrefab { private set; get; }
         [field: SerializeField] public string ViewLink { private set; get; }
     }

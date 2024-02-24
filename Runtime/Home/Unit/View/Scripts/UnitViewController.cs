@@ -1,6 +1,6 @@
 ﻿using Gallery.Assets;
 using System;
-using Unit.SharedTypes;
+using Unit.Data;
 using Unit.View.Components;
 using Unit.View.SharedTypes;
 using UnityEngine;
@@ -22,7 +22,7 @@ namespace Unit.View
         public void InitializeFilter(Action<UnitFilter> onUpdate) =>
             View.FilterPanel.SetData(onUpdate);
 
-        public void InitializeInfoPanelActions(Action<GalleryAsset> openGallery, Action<UnitCard> openBalcony, Action<UnitCard> openDollHouse, Action<UnitCard> close)
+        public void InitializeInfoPanelActions(Action<GalleryAsset> openGallery, Action<UnitData> openBalcony, Action<UnitData> openDollHouse, Action<UnitData> close)
         {
             InfoPanelActions = new(GetInstallmentsPanel, GetMapPanel, openGallery, openBalcony, openDollHouse, close);
 
@@ -33,18 +33,18 @@ namespace Unit.View
                 panel.Show(map);
             }
 
-            void GetInstallmentsPanel(Sprite sprite)
+            void GetInstallmentsPanel(UnitInstallmentsData data)
             {
                 var panel = View.InstallmentsPanelPool.GetActive;
                 panel.Initialize();
-                panel.Show(sprite);
+                panel.Show(data);
             }
         }
 
-        public void Show(UnitCard card)
+        public void Show(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {
             var panel = GetInfoPanel();
-            panel.SetData(card);
+            panel.SetData(data, installmentsData, map);
             panel.Show();
 
             UnitInfoPanel GetInfoPanel()

@@ -1,3 +1,4 @@
+using Unit.Data;
 using UnityEngine;
 using UnityEngine.UI;
 using UScreens;
@@ -6,11 +7,10 @@ namespace Unit.View.Components
 {
     internal class UnitInstallmentsPanel : UPanel
     {
-        [SerializeField] private Image image;
 
-        public void Show(Sprite map)
+        public void Show(UnitInstallmentsData data)
         {
-            image.sprite = map;
+            throw new System.NotImplementedException();
             base.Show();
         }
     }

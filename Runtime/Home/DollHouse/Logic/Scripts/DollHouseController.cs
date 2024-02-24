@@ -1,5 +1,5 @@
 using System;
-using Unit.SharedTypes;
+using Unit.Data;
 using Object = UnityEngine.Object;
 
 namespace DollHouse.Logic
@@ -16,7 +16,7 @@ namespace DollHouse.Logic
             {
                 var holder = Object.FindObjectOfType<DollHouseHolder>();
                 onCompleteLoad.Invoke(card);
-                holder.Show(card.UnitTypeCard.DollHousePrefab);
+                holder.Show(card.Data.UnitTypeCard.DollHousePrefab);
             }
         }
 

@@ -2,7 +2,7 @@ using Min_Max_Slider;
 using SwitchPanel;
 using System;
 using System.Linq;
-using Unit.SharedTypes;
+using Unit.Data;
 using UnityEngine;
 using UScreens;
 

@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b036ab6f8161a5f4993c0ee174e69c0f, type: 3}
+  m_Name: UnitMaterialRepo
+  m_EditorClassIdentifier: 
+  mapDatas:
+  - availabilty: 0
+    select: {fileID: 2100000, guid: 55b89ac4f52c52d4e9d15527f6caae4f, type: 2}
+    unselect: {fileID: 2100000, guid: 0fae2646f0a2c494dace9e7ce1cbec0c, type: 2}
+    body: {fileID: 2100000, guid: d9cf22ab7c4b05f48ba07766308ac882, type: 2}
+  - availabilty: 1
+    select: {fileID: 2100000, guid: 0bb982e78a2d92d42b0cc07443aab431, type: 2}
+    unselect: {fileID: 2100000, guid: 5df283b3aa8842640ad806b60c69e876, type: 2}
+    body: {fileID: 2100000, guid: 1bd0bdf1006401543bfb424f4b996e37, type: 2}
+  - availabilty: 2
+    select: {fileID: 2100000, guid: 436eba7a492b6774c81c09dc6af379c3, type: 2}
+    unselect: {fileID: 2100000, guid: b8114f421a4142e42802cadb545b9cdd, type: 2}
+    body: {fileID: 2100000, guid: a6c61a23c8b1cc44b93c07cebd8c526c, type: 2}
+  - availabilty: 3
+    select: {fileID: 2100000, guid: 8022fcbff7273e845b9eb538ff27aa3a, type: 2}
+    unselect: {fileID: 2100000, guid: a7907768e00b4e548ab3fd743bdf2e0e, type: 2}
+    body: {fileID: 2100000, guid: 3d8c6dae49c8dbd409dc2d42a61d6f98, type: 2}

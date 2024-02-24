@@ -1,6 +1,6 @@
 using Gallery;
+using Unit.Data;
 using Unit.Logic;
-using Unit.SharedTypes;
 using Unit.View;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,22 +10,23 @@ namespace Unit
 {
     public static class UnitSystem
     {
+        private static readonly UnitController logic;
+        private static readonly UnitViewController view;
+
         static UnitSystem()
         {
-            var logic = UnitController.LoadInstance;
-            var view = UScreenRepo.Get<UnitViewController>();
+            logic = new();
+            view = UScreenRepo.Get<UnitViewController>();
 
-            logic.Initialize();
+            logic.SelectUnit(view.Show);
 
-            logic.Building.InitializeUnits(view.Show);
-
-            view.InitializeFilter(logic.FilterController.Update);
+            view.InitializeFilter(logic.UpdateFilter);
             view.InitializeInfoPanelActions(GallerySystem.Show,
-                                            logic.Building.GoToBalcony,
+                                            logic.GoToBalcony,
                                             OpenDollHouse,
-                                            logic.Building.UnSelectUnit);
+                                            logic.UnSelectUnit);
 
-            void OpenDollHouse(UnitCard card)
+            void OpenDollHouse(UnitData card)
             {
                 SceneManager.LoadScene(2);
             }
@@ -33,13 +34,12 @@ namespace Unit
 
         public static void Show(Transform parent = null)
         {
-            var view = UScreenRepo.Get<UnitViewController>();
             if (parent != null)
                 view.SetParent(parent);
             view.Show();
         }
 
         public static void Hide() =>
-            UScreenRepo.Get<UnitViewController>().Hide();
+            view.Hide();
     }
 }

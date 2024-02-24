@@ -1,7 +1,7 @@
 using Gallery.Assets;
 using System;
 using TMPro;
-using Unit.SharedTypes;
+using Unit.Data;
 using Unit.View.SharedTypes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,12 +23,15 @@ namespace Unit.View.Components
         [SerializeField] private Button dollHouseBtn;
         [SerializeField] private Button goToBalconyBtn;
 
-        private UnitCard currentCard;
-        private Action<UnitCard> OnClose;
+        private UnitData currentCard;
+        private UnitInstallmentsData currentInstallmentsData;
+        private Sprite currentMap;
+
+        private Action<UnitData> OnClose;
 
         private bool isInitialized = false;
 
-        public void SetData(UnitCard data)
+        public void SetData(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {
             nameText.SetText(data.Name);
             suitSizeText.SetText(data.Area.ToString());
@@ -37,6 +40,8 @@ namespace Unit.View.Components
             orientationText.SetText(data.Orientation.ToString());
 
             currentCard = data;
+            currentInstallmentsData = installmentsData;
+            currentMap = map;
         }
 
         public void SetActions(InfoPanelActions actions)
@@ -53,19 +58,19 @@ namespace Unit.View.Components
 
             OnClose = actions.Close;
 
-            void SetInstallmentsAction(Action<Sprite> action) =>
-                action.Invoke(currentCard.UnitTypeCard.Payment);
+            void SetInstallmentsAction(Action<UnitInstallmentsData> action) =>
+                action.Invoke(currentInstallmentsData);
 
             void SetMapAction(Action<Sprite> action) =>
-                action.Invoke(currentCard.UnitTypeCard.Map);
+                action.Invoke(currentMap);
 
             void SetGalleryAction(Action<GalleryAsset> action) =>
                 action.Invoke(currentCard.UnitTypeCard.Gallery);
 
-            void SetUnitViewAction(Action<UnitCard> action) =>
+            void SetUnitViewAction(Action<UnitData> action) =>
                 action.Invoke(currentCard);
 
-            void SetDollHouseAction(Action<UnitCard> action) =>
+            void SetDollHouseAction(Action<UnitData> action) =>
                 action.Invoke(currentCard);
 
             void SetBalconyAction() =>
@@ -76,7 +81,7 @@ namespace Unit.View.Components
         {
             base.Hide();
 
-            if (currentCard != null)
+            if (currentCard.Equals(null))
                 OnClose.Invoke(currentCard);
         }
     }

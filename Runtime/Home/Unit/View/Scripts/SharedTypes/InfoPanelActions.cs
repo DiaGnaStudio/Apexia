@@ -1,25 +1,25 @@
 ﻿using Gallery.Assets;
 using System;
-using Unit.SharedTypes;
+using Unit.Data;
 using UnityEngine;
 
 namespace Unit.View.SharedTypes
 {
     internal class InfoPanelActions
     {
-        public Action<Sprite> OpenInstallments;
+        public Action<UnitInstallmentsData> OpenInstallments;
         public Action<Sprite> OpenMap;
         public Action<GalleryAsset> OpenGallery;
-        public Action<UnitCard> OpenBalcony;
-        public Action<UnitCard> OpenDollHouse;
-        public Action<UnitCard> Close;
+        public Action<UnitData> OpenBalcony;
+        public Action<UnitData> OpenDollHouse;
+        public Action<UnitData> Close;
 
-        public InfoPanelActions(Action<Sprite> openInstallments,
+        public InfoPanelActions(Action<UnitInstallmentsData> openInstallments,
                                 Action<Sprite> openMap,
                                 Action<GalleryAsset> openGallery,
-                                Action<UnitCard> openBalcony,
-                                Action<UnitCard> openDollHouse,
-                                Action<UnitCard> close)
+                                Action<UnitData> openBalcony,
+                                Action<UnitData> openDollHouse,
+                                Action<UnitData> close)
         {
             OpenInstallments = openInstallments;
             OpenMap = openMap;

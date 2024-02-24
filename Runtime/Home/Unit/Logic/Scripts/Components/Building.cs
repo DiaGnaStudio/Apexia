@@ -1,20 +1,30 @@
 using System;
 using System.Collections.Generic;
-using Unit.SharedTypes;
+using Unit.Data;
 using UnityEngine;
 
 namespace Unit.Logic.Components
 {
-    public class Building : MonoBehaviour
+    internal class Building : MonoBehaviour
     {
-        [SerializeField] private Unit[] units;
-
+        private Unit[] units;
         private readonly List<Unit> filterList = new();
 
-        public void InitializeUnits(Action<UnitCard> onSelect)
+        private void Awake()
+        {
+            units = GetComponentsInChildren<Unit>();
+        }
+
+        public void InitializeUnits(Action<UnitData, int, string> onSelect)
         {
             foreach (var unit in units)
                 unit.SetSelectAction(onSelect);
+        }
+
+        public void LoadUnits(Func<string, UnitData> dataGetter)
+        {
+            foreach (var unit in units)
+                unit.LoadData(dataGetter);
         }
 
         public void ApplyFilter(UnitFilter filter)
@@ -22,11 +32,13 @@ namespace Unit.Logic.Components
             filterList.Clear();
             foreach (var unit in units)
             {
-                if (!filter.IsTypeCountins(unit.Card.UnitTypeCard.Type)) continue;
-                if (!filter.IsOrientationCountins(unit.Card.Orientation)) continue;
-                if (!filter.IsAvailabilitiesCountins(unit.Card.Availability)) continue;
-                if (!(unit.Card.Area >= filter.Area.x && unit.Card.Area <= filter.Area.y)) continue;
-                if (!(unit.Card.Price >= filter.Price.x && unit.Card.Price <= filter.Price.y)) continue;
+                if (!unit.IsInitialize) continue;
+                if (unit.Data.UnitTypeCard == null) continue; // TODO: remove after get all data from server
+                if (!filter.IsTypeCountins(unit.Data.UnitTypeCard.Type)) continue;
+                if (!filter.IsOrientationCountins(unit.Data.Orientation)) continue;
+                if (!filter.IsAvailabilitiesCountins(unit.Data.Availability)) continue;
+                if (!(unit.Data.Area >= filter.Area.x && unit.Data.Area <= filter.Area.y)) continue;
+                if (!(unit.Data.Price >= filter.Price.x && unit.Data.Price <= filter.Price.y)) continue;
 
                 filterList.Add(unit);
             }
@@ -38,16 +50,16 @@ namespace Unit.Logic.Components
                 unit.Highlight(true);
         }
 
-        public void GoToBalcony(UnitCard card) =>
+        public void GoToBalcony(UnitData card) =>
             GetUnit(card).GoToBalcony();
 
-        public void UnSelectUnit(UnitCard card) =>
+        public void UnSelectUnit(UnitData card) =>
             GetUnit(card).UnSelect();
 
-        private Unit GetUnit(UnitCard card)
+        private Unit GetUnit(UnitData data)
         {
             foreach (var unit in units)
-                if (unit.Card == card)
+                if (unit.Data.Equals(data))
                     return unit;
             return null;
         }

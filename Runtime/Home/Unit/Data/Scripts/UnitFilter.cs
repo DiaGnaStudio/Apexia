@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Unit.SharedTypes
+namespace Unit.Data
 {
     public class UnitFilter
     {

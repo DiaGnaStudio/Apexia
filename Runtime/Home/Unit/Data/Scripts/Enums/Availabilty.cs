@@ -1,4 +1,4 @@
-﻿namespace Unit.SharedTypes
+﻿namespace Unit.Data
 {
     public enum Availabilty
     {

@@ -1,6 +1,6 @@
 using DollHouse.Logic;
 using DollHouse.View;
-using Unit.SharedTypes;
+using Unit.Data;
 using UScreens;
 
 namespace DollHouse
@@ -14,7 +14,7 @@ namespace DollHouse
             static void OnCompleteLoad(UnitCard card)
             {
                 var view = UScreenRepo.Get<DollHouseViewController>();
-                view.Show(card.Name, card.UnitTypeCard.Type.ToString(), card.Area);
+                view.Show(card.Data.Name, card.Data.UnitTypeCard.Type.ToString(), card.Data.Area);
                 view.SetCloseAction(DollHouseController.Unload);
             }
         }
