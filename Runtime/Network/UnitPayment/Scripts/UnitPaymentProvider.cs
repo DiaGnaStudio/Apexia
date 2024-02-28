@@ -13,6 +13,7 @@ namespace UnitPayment.Provider
         public void GetById(string id, Action<UnityWebRequest> responseCallback)
         {
             var reqData = GetByIdAPI.CreateRequestData();
+            reqData.AppendUrl(id + "/payment-plan/records");
             var req = reqData.CreateRequest();
             req.SetCallback(responseCallback);
             req.Send();
