@@ -81,7 +81,7 @@ namespace Unit.View.Components
         {
             base.Hide();
 
-            if (currentCard.Equals(null))
+            if (!currentCard.Equals(null))
                 OnClose.Invoke(currentCard);
         }
     }
