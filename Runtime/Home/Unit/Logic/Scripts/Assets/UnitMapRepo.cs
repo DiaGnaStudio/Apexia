@@ -17,7 +17,8 @@ namespace Unit.Logic.Assets
                 if (data.code == code && data.floors.Any(x => x == floor))
                     return data.map;
 
-            throw new System.NullReferenceException($"The map is not available (code = {code} and floor = {floor})");
+            Debug.LogWarning($"The map is not available (code = {code} and floor = {floor})");
+            return null;
         }
 
         [System.Serializable]

@@ -24,5 +24,8 @@ namespace Unit.Logic.Components
 
         private Material GetUnselect(Availabilty availabilty) =>
             materialRepo.GetUnselect(availabilty);
+
+        public void SetActive(bool value) =>
+            meshRenderer.enabled = value;
     }
 }

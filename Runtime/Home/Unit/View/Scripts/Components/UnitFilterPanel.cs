@@ -18,17 +18,17 @@ namespace Unit.View.Components
         [SerializeField] private SwitchButtonsPanel availabilitySelected;
         [SerializeField] private SwitchButtonsPanel orientationSelected;
 
-        private readonly UnitFilter Filter = new();
+        private readonly UnitFilter Filter = UnitFilter.All;
 
         public void SetData(Action<UnitFilter> onUpdate)
         {
             SetAreaAction();
             SetPriceAction();
-            SetROIAction();
+            //SetROIAction();
             SetFloorAction();
             SetChangeType();
             SetChangeAvailability();
-            SetChangeOrientation();
+            //SetChangeOrientation();
 
             void SetAreaAction()
             {
@@ -46,13 +46,13 @@ namespace Unit.View.Components
                     onUpdate.Invoke(Filter.UpdatePrice(min, max));
             }
 
-            void SetROIAction()
-            {
-                roiSlider.onValueChanged.AddListener(OnChange);
+            //void SetROIAction()
+            //{
+            //    roiSlider.onValueChanged.AddListener(OnChange);
 
-                void OnChange(float min, float max) =>
-                    onUpdate.Invoke(Filter.UpdateROI(min, max));
-            }
+            //    void OnChange(float min, float max) =>
+            //        onUpdate.Invoke(Filter.UpdateROI(min, max));
+            //}
 
             void SetFloorAction()
             {
@@ -78,13 +78,13 @@ namespace Unit.View.Components
                     onUpdate.Invoke(Filter.UpdateAvailabilities(selected.Cast<Availabilty>().ToArray())); //TODO: change Cast function
             }
 
-            void SetChangeOrientation()
-            {
-                orientationSelected.OnChangedMultiple.AddListener(OnChanged);
+            //void SetChangeOrientation()
+            //{
+            //    orientationSelected.OnChangedMultiple.AddListener(OnChanged);
 
-                void OnChanged(int[] selected) =>
-                    onUpdate.Invoke(Filter.UpdateOrientation(selected.Cast<Orientation>().ToArray())); //TODO: change Cast function
-            }
+            //    void OnChanged(int[] selected) =>
+            //        onUpdate.Invoke(Filter.UpdateOrientation(selected.Cast<Orientation>().ToArray())); //TODO: change Cast function
+            //}
         }
     }
 }

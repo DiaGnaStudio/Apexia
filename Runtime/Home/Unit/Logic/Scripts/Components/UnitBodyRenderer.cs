@@ -18,5 +18,8 @@ namespace Unit.Logic.Components
 
         public void Apply(Availabilty availabilty) =>
             meshRenderer.material = materialRepo.GetBody(availabilty);
+
+        public void SetActive(bool value) => 
+            meshRenderer.enabled = value;
     }
 }

@@ -25,6 +25,8 @@ namespace Unit.Logic.Components
         {
             foreach (var unit in units)
                 unit.LoadData(dataGetter);
+
+            ApplyFilter(UnitFilter.All);
         }
 
         public void ApplyFilter(UnitFilter filter)
@@ -35,10 +37,11 @@ namespace Unit.Logic.Components
                 if (!unit.IsInitialize) continue;
                 if (unit.Data.UnitTypeCard == null) continue; // TODO: remove after get all data from server
                 if (!filter.IsTypeCountins(unit.Data.UnitTypeCard.Type)) continue;
-                if (!filter.IsOrientationCountins(unit.Data.Orientation)) continue;
+                //if (!filter.IsOrientationCountins(unit.Data.Orientation)) continue;
                 if (!filter.IsAvailabilitiesCountins(unit.Data.Availability)) continue;
                 if (!(unit.Data.Area >= filter.Area.x && unit.Data.Area <= filter.Area.y)) continue;
                 if (!(unit.Data.Price >= filter.Price.x && unit.Data.Price <= filter.Price.y)) continue;
+                if (!(unit.Data.Floor >= filter.Floor.x && unit.Data.Floor <= filter.Floor.y)) continue;
 
                 filterList.Add(unit);
             }

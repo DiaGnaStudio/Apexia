@@ -73,12 +73,17 @@ namespace Unit.Logic.Components
             if (!isShow) return;
 
             isShow = false;
+
+            borderRenderer.Apply(Data.Availability, false);
         }
 
         public void Highlight(bool value)
         {
             borderRenderer.Apply(Data.Availability, false);
             objectSelect.SetColliderAction(value);
+
+            borderRenderer.SetActive(value);
+            bodyRenderer.SetActive(value);
         }
     }
 }

@@ -24,7 +24,7 @@ RenderSettings:
   m_AmbientEquatorColor: {r: 0.114, g: 0.125, b: 0.133, a: 1}
   m_AmbientGroundColor: {r: 0.047, g: 0.043, b: 0.035, a: 1}
   m_AmbientIntensity: 1
-  m_AmbientMode: 4
+  m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
   m_SkyboxMaterial: {fileID: 0}
   m_HaloStrength: 0.5
@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 261.8995, g: 324.45413, b: 429.43256, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -662,9 +662,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 364824818463068288, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 27
+      objectReference: {fileID: 0}
+    - target: {fileID: 870547356994235908, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 1406155929005907246, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: m_Name
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1900604461568401486, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 24
       objectReference: {fileID: 0}
     - target: {fileID: 1901629475053857009, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -705,6 +717,38 @@ PrefabInstance:
     - target: {fileID: 1901629475053857009, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4406674955339156720, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5333742097559297904, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5729569933984242046, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6329121440308595957, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6474315584576605525, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 7604796333742813268, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8111656227600097355, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9123881141863031275, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
