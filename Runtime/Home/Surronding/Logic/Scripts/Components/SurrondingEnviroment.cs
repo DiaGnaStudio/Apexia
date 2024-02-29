@@ -29,7 +29,7 @@ namespace Surronding.Logic.Components
 
                 foreach (var obj in item.objects)
                 {
-                    if (!filter.IsMapGuideCountins(obj.type)) continue;
+                    //if (!filter.IsMapGuideCountins(obj.type)) continue;
 
                     obj.target.SetActive(true);
                 }
