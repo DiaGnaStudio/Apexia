@@ -2,11 +2,12 @@ using Amenities.Assets;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UScreens;
 
 // modules to make amenities buttons work correctly . canvases about showing the details of amenities built up here.
 namespace UI.MainMenu.Amenities.Components
 {
-    internal class InfoPanel : MonoBehaviour
+    internal class InfoPanel : UPanel
     {
         [SerializeField] private TextMeshProUGUI titleTxt;
         [SerializeField] private Image previewImg;
@@ -20,16 +21,6 @@ namespace UI.MainMenu.Amenities.Components
             titleTxt.text = title;
             descriptionTxt.text = description;
             previewImg.sprite = preview;
-        }
-
-        public void Show()
-        {
-            gameObject.SetActive(true);
-        }
-
-        public void Hide()
-        {
-            gameObject.SetActive(false);
         }
     }
 }

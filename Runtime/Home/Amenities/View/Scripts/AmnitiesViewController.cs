@@ -13,7 +13,10 @@ namespace Amenities.View
 
         public override void InitializeState() { }
 
-        public override void InitializeView() { }
+        public override void InitializeView()
+        {
+            View.InfoPanel.Initialize();
+        }
 
         public void Initialize(string[] items, Action<int> onSelect, Func<int, AmenitiesInfoAsset> getInfo)
         {

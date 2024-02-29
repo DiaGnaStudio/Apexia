@@ -358,6 +358,8 @@ GameObject:
   - component: {fileID: 7275874960650510544}
   - component: {fileID: 703576217523788850}
   - component: {fileID: 1848313710066885036}
+  - component: {fileID: 3234715463040369902}
+  - component: {fileID: 9160391889782702399}
   m_Layer: 5
   m_Name: InfoPanel
   m_TagString: Untagged
@@ -463,9 +465,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d71a7c19ae890924298b854b6e0bdea8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hideBtn: {fileID: 1491846572168564525}
   titleTxt: {fileID: 3112108738640671773}
   previewImg: {fileID: 6955058187309255370}
   descriptionTxt: {fileID: 7994338700141962053}
+--- !u!114 &3234715463040369902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717679423402691987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ef29194365ce14bb4cd2ee2a5792ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &9160391889782702399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4717679423402691987}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3642be5420506844fa2ad5dc9eed84bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7944201802970927075
 GameObject:
   m_ObjectHideFlags: 0
