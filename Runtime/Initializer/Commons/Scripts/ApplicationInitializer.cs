@@ -11,7 +11,7 @@ public class ApplicationInitializer : MonoBehaviour
 {
     private void Awake()
     {
-        LoginSystem.Initialize(SetInfo, Initialize, SignOut);
+        LoginSystem.Initialize(SetInfo, Initialize, SignOut, ExitSystem.Show);
 
         void SignOut()
         {

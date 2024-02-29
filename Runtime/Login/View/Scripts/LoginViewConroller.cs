@@ -18,6 +18,9 @@ namespace Login.View
         public void SetLoginAction(Action action) =>
             View.LoginBTN.SetAction(action);
 
+        public void SetCloseAction(Action action) =>
+            View.CloseBTN.onClick.AddListener(action.Invoke);
+
         public void SetButtonIntractable(bool value) =>
             View.LoginBTN.SetIntractable(value);
 
