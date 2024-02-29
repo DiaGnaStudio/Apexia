@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 261.8995, g: 324.45413, b: 429.43256, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -718,6 +718,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2474714850130639934, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3708302382577780376, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 4398793837595042682, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 11
+      objectReference: {fileID: 0}
     - target: {fileID: 4406674955339156720, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: unitId
       value: 8
@@ -725,6 +737,10 @@ PrefabInstance:
     - target: {fileID: 5333742097559297904, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: unitId
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5678550736938048746, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 5729569933984242046, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: unitId
@@ -737,6 +753,14 @@ PrefabInstance:
     - target: {fileID: 6474315584576605525, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: unitId
       value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 6748261123477580742, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 7589255894056504747, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: unitId
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7604796333742813268, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: unitId

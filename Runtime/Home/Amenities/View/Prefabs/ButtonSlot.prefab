@@ -135,6 +135,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb61272f726434c4eaa2b131dd2cfa93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  button: {fileID: 4638112169503010176}
+  titleText: {fileID: 4315911655650741581}
   on: {fileID: 21300000, guid: 4469692257e23d44aacea12656687fd2, type: 3}
   off: {fileID: 21300000, guid: 225156558218d2e46af9c8003adb27f1, type: 3}
 --- !u!114 &927082748591816256

@@ -1,10 +1,9 @@
 using TMPro;
-using Unit.Data;
 using UnityEngine;
 
 namespace Unit.View.Components.Installments
 {
-    public class SchedulePanel : MonoBehaviour
+    internal class SchedulePanel : MonoBehaviour
     {
         private const string NUMBER_FORMAT = "{0:n0}";
 
@@ -14,13 +13,13 @@ namespace Unit.View.Components.Installments
         [SerializeField] private TMP_Text typeText;
         [SerializeField] private TMP_Text areaText;
 
-        public void SetData(string name, int cost, int time, UnitType type, int area)
+        public void SetData(string name, int cost, int time, string type, string area)
         {
             nameText.SetText(name);
             costText.SetText(string.Format($"AED {NUMBER_FORMAT}", cost));
             timeText.SetText(string.Format($"{NUMBER_FORMAT} Months", time));
-            typeText.SetText(type.ToString());
-            timeText.SetText(string.Format($"{NUMBER_FORMAT} FT", area));
+            typeText.SetText(type);
+            timeText.SetText(string.Format($"{NUMBER_FORMAT} FT2", area));
         }
     }
 }

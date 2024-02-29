@@ -11,6 +11,7 @@ namespace Unit.Logic
     public class UnitController
     {
         private readonly UnitLoader loaderAPI;
+        private readonly UnitPaymentLoader paymentLoaderAPI = new();
 
         private readonly UnitTypeRepo unitTypeStorage;
         private readonly UnitMapRepo unitMapStorage;
@@ -52,7 +53,10 @@ namespace Unit.Logic
             {
                 var map = unitMapStorage.Get(code, data.Floor);
 
-                onSelect.Invoke(data, new(), map);
+                paymentLoaderAPI.Load(id, LoadInstallment);
+
+                void LoadInstallment(UnitInstallmentsData installmentsData) =>
+                    onSelect.Invoke(data, installmentsData, map);
             }
         }
 

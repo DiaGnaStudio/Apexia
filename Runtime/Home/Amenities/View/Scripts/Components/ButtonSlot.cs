@@ -8,20 +8,14 @@ namespace UI.MainMenu.Amenities.Components
 {
     internal class ButtonSlot : MonoBehaviour
     {
-        private Button button;
-        private TMP_Text titleText;
+        [SerializeField] private Button button;
+        [SerializeField] private TMP_Text titleText;
 
         [Header("Sprites")]
         [SerializeField] private Sprite on;
         [SerializeField] private Sprite off;
 
         private bool isActive;
-
-        private void Awake()
-        {
-            button = GetComponent<Button>();
-            titleText = button.GetComponentInChildren<TMP_Text>();
-        }
 
         public void Show(string title, Action<int> onLook)
         {
