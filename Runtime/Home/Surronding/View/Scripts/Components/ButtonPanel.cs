@@ -27,8 +27,8 @@ namespace Surronding.View.Components
 
         private void OnEnable()
         {
-            if(buttonPool.ActiveItems.Length > 0)
-            buttonPool.ActiveItems[0].ForceInvoke();
+            if (buttonPool.ActiveItems.Length > 0)
+                buttonPool.ActiveItems[0].ForceInvoke();
         }
     }
 }
