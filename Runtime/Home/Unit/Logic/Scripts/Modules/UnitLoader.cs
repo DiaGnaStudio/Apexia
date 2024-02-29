@@ -52,8 +52,9 @@ namespace Unit.Logic.Module
             var unitTypeCard = GetUnitType(GetType(data.unit_type));
             var orientation = GetOrientation(data.direction);
             var availability = GetAvailabilty(data.status);
+            var state = GetState(data.state);
 
-            return (data.id, new(name, area, floor, price, unitTypeCard, orientation, availability));
+            return (data.id, new(name, area, floor, price, unitTypeCard, orientation, availability, state));
 
             Orientation GetOrientation(string direction)
             {
@@ -83,10 +84,22 @@ namespace Unit.Logic.Module
             {
                 return unit_type switch
                 {
-                    "Studio" => UnitType.Studio,
-                    "1 Bedroom" or "1 Bedroom + study" or "1 Bedroom + maid" => UnitType.bedroom_1,
-                    "2 Bedroom" or "2 Bedroom + study" or "2 Bedroom + maid" => UnitType.bedroom_2,
-                    "3 Bedroom" or "3 Bedroom + study" or "3 Bedroom + maid" => UnitType.bedroom_3,
+                    "1 Bedroom" => UnitType.bedroom_1,
+                    "1 Bedroom + study" => UnitType.bedroom_1_studio,
+                    "2 Bedroom" => UnitType.bedroom_2,
+                    "2 Bedroom + study" => UnitType.bedroom_2_studio,
+                    "2 Bedroom + maid" => UnitType.bedroom_2_maid,
+                    _ => throw new ArgumentException(),
+                };
+            }
+
+            State GetState(string state)
+            {
+                return state switch
+                {
+                    "Saleable" => State.Saleable,
+                    "Unsaleble" => State.Unsaleble,
+                    "Negotiable" => State.Negotiable,
                     _ => throw new ArgumentException(),
                 };
             }

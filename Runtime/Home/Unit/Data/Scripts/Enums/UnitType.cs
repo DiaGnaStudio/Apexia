@@ -2,9 +2,10 @@ namespace Unit.Data
 {
     public enum UnitType
     {
-        Studio,
         bedroom_1,
+        bedroom_1_studio,
         bedroom_2,
-        bedroom_3,
+        bedroom_2_studio,
+        bedroom_2_maid,
     }
 }

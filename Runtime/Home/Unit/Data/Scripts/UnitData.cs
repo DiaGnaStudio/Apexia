@@ -2,7 +2,7 @@ namespace Unit.Data
 {
     public struct UnitData
     {
-        public UnitData(string name, int area, int floor, int price, UnitTypeCard unitTypeCard, Orientation orientation, Availabilty availability)
+        public UnitData(string name, int area, int floor, int price, UnitTypeCard unitTypeCard, Orientation orientation, Availabilty availability, State state)
         {
             Name = name;
             Area = area;
@@ -11,6 +11,7 @@ namespace Unit.Data
             UnitTypeCard = unitTypeCard;
             Orientation = orientation;
             Availability = availability;
+            State = state;
         }
 
         public string Name { private set; get; }
@@ -20,6 +21,7 @@ namespace Unit.Data
         public UnitTypeCard UnitTypeCard { private set; get; }
         public Orientation Orientation { private set; get; }
         public Availabilty Availability { private set; get; }
+        public State State { get; private set; }
 
         public static UnitData DEFAULT => new() { Name = "DEFAULT" };
     }

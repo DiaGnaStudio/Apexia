@@ -12,7 +12,8 @@ namespace Unit.Data
         [SerializeField] private UnitTypeCard UnitTypeCard;
         [SerializeField] private Orientation Orientation;
         [SerializeField] private Availabilty Availability;
+        [SerializeField] private State State;
 
-        public UnitData Data => new(Name, Area, Floor, Price, UnitTypeCard, Orientation, Availability);
+        public UnitData Data => new(Name, Area, Floor, Price, UnitTypeCard, Orientation, Availability, State);
     }
 }

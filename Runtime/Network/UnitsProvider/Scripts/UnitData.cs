@@ -1,3 +1,5 @@
+using Codice.CM.Common.Serialization;
+
 namespace Units.Provider.Data
 {
     public class UnitData
@@ -9,6 +11,7 @@ namespace Units.Provider.Data
         public string unit_type;
         public string direction;
         public string status;
+        public string state;
 
         public override string ToString()
         {
