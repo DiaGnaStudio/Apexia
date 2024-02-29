@@ -262,6 +262,14 @@ PrefabInstance:
       value: Password-Field
       objectReference: {fileID: 0}
     - target: {fileID: 5786032276247167835, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
+      propertyPath: m_InputType
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786032276247167835, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
+      propertyPath: m_ContentType
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5786032276247167835, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
       propertyPath: m_Navigation.m_SelectOnUp
       value: 
       objectReference: {fileID: 4204717197877577249}
