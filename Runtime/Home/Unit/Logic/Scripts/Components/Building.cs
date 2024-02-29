@@ -40,7 +40,10 @@ namespace Unit.Logic.Components
                 //if (!filter.IsOrientationCountins(unit.Data.Orientation)) continue;
                 if (!filter.IsAvailabilitiesCountins(unit.Data.Availability)) continue;
                 if (!(unit.Data.Area >= filter.Area.x && unit.Data.Area <= filter.Area.y)) continue;
-                if (!(unit.Data.Price >= filter.Price.x && unit.Data.Price <= filter.Price.y)) continue;
+
+                if (unit.Data.State == State.Unsaleble) continue;
+                if (unit.Data.State == State.Saleable && !(unit.Data.Price >= filter.Price.x && unit.Data.Price <= filter.Price.y)) continue;
+
                 if (!(unit.Data.Floor >= filter.Floor.x && unit.Data.Floor <= filter.Floor.y)) continue;
 
                 filterList.Add(unit);

@@ -42,6 +42,11 @@ namespace Unit.View.Components
             currentCard = data;
             currentInstallmentsData = installmentsData;
             currentMap = map;
+
+            if (data.State == State.Negotiable)
+                installmentsBtn.gameObject.SetActive(false);
+            else
+                installmentsBtn.gameObject.SetActive(true);
         }
 
         public void SetActions(InfoPanelActions actions)
