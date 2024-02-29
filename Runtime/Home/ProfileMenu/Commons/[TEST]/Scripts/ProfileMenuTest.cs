@@ -6,7 +6,12 @@ namespace ProfileMenu.Test
     {
         private void Awake()
         {
+            ProfileMenuSystem.Initialize(Profile, Setting, SignOut);
             Show();
+
+            void Profile() => Debug.Log("Click on Profile.");
+            void Setting() => Debug.Log("Click on Setting.");
+            void SignOut() => Debug.Log("Click on SignOut.");
         }
 
         [ContextMenu("Show")]
