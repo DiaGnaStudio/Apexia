@@ -14,7 +14,7 @@ namespace Unit.Logic.Assets
         public Sprite Get(int code, int floor)
         {
             foreach (var data in mapDatas)
-                if (data.code == code && data.floors.Any(x => x == floor))
+                if (data.code == code && data.floors.Any(x => x == floor + 1))
                     return data.map;
 
             Debug.LogWarning($"The map is not available (code = {code} and floor = {floor})");

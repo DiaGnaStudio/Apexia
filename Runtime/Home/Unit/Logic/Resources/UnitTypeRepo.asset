@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   typeCards:
   - {fileID: 11400000, guid: 2877c0aa07ccc3a4196145297fa301ad, type: 2}
+  - {fileID: 11400000, guid: a0f39b2ce91443c4bbd89e017ea40cca, type: 2}
   - {fileID: 11400000, guid: 3b25e4ddf0bc15449b7c918c09f9e574, type: 2}
-  - {fileID: 11400000, guid: 5faf6d9bec808ca46831c950c4292ad6, type: 2}
-  - {fileID: 11400000, guid: 75f86c8fb575d0b43954187df68dfd5a, type: 2}
+  - {fileID: 11400000, guid: 22439c01385c60f459054a12b460ea76, type: 2}
+  - {fileID: 11400000, guid: 702366f297ed7754e91b21098157f49a, type: 2}

@@ -11,11 +11,11 @@ namespace Units.Provider.Data
         public string unit_type;
         public string direction;
         public string status;
-        public string state;
+        public string negotiationStatus;
 
         public override string ToString()
         {
-            return $"ID: {id}, Name: {name}, Area: {area}, Floor: {floor}, Unit Type: {unit_type}, Direction: {direction}, Status: {status}";
+            return $"ID: {id}, Name: {name}, Area: {area}, Floor: {floor}, Unit Type: {unit_type}, Direction: {direction}, Status: {status}, State: {negotiationStatus}";
         }
     }
 }

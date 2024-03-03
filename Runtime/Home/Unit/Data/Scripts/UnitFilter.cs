@@ -28,7 +28,7 @@ namespace Unit.Data
         public static UnitFilter All => new(new(float.MinValue, float.MaxValue),
                                             new(float.MinValue, float.MaxValue),
                                             new(float.MinValue, float.MaxValue),
-                                            new UnitType[5] { UnitType.bedroom_1, UnitType.bedroom_1_studio, UnitType.bedroom_2, UnitType.bedroom_2_studio, UnitType.bedroom_2_maid },
+                                            new UnitType[5] { UnitType.bedroom_1, UnitType.bedroom_1_study, UnitType.bedroom_2, UnitType.bedroom_2_study, UnitType.bedroom_2_maid },
                                             new Availabilty[4] { Availabilty.Sold, Availabilty.Reserved, Availabilty.Available, Availabilty.Unavailable });
 
         public UnitFilter UpdateArea(float min, float max)

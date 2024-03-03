@@ -145,7 +145,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -14.869}
+  m_AnchoredPosition: {x: 0, y: -14.868988}
   m_SizeDelta: {x: 214, y: 29.738}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &4364836074890227083
@@ -301,7 +301,7 @@ MonoBehaviour:
   m_MinWidth: -1
   m_MinHeight: -1
   m_PreferredWidth: 300
-  m_PreferredHeight: 162.557
+  m_PreferredHeight: 200
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
@@ -526,10 +526,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1407168858162276607, guid: e03f213e3de1e304588dc530bf8ff775, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1407168858162276607, guid: e03f213e3de1e304588dc530bf8ff775, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
@@ -716,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6188564244009338519, guid: 430501ebed80b864f926fa5f1f2937a6, type: 3}
       propertyPath: m_Name
-      value: 1 Bedrooms+StudioBTN
+      value: 1 Bedrooms+StudyBTN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -942,7 +938,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6188564244009338519, guid: 21ea27c063b89db4c86f66164fc6a9b1, type: 3}
       propertyPath: m_Name
-      value: 2 Bedrooms+StudioBTN
+      value: 2 Bedrooms+StudyBTN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

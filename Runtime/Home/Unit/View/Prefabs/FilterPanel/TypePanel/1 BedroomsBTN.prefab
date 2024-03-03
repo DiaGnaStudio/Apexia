@@ -90,11 +90,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5364693257572170935, guid: 8aaf56e87764bb54ca96b10d983518cc, type: 3}
       propertyPath: m_text
-      value: 1 Bedrooms
+      value: 1 Bedroom
       objectReference: {fileID: 0}
     - target: {fileID: 8841344646760899458, guid: 8aaf56e87764bb54ca96b10d983518cc, type: 3}
       propertyPath: m_Name
-      value: 1 BedroomsBTN Variant
+      value: 1 BedroomsBTN
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

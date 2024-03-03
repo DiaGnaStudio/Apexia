@@ -13,7 +13,7 @@ namespace Unit.View.Components.Installments
         public void SetData(string title, int fee, string date)
         {
             titleText.SetText(title);
-            FeeText.SetText(string.Format($"AED {NUMBER_FORMAT}", fee));
+            FeeText.SetText(string.Format($"OMR {NUMBER_FORMAT}", fee));
             dateText.SetText(date);
         }
     }

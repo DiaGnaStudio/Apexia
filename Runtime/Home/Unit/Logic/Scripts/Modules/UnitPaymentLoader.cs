@@ -23,12 +23,12 @@ namespace Unit.Logic.Module
                 {
                     Payment[] payments = new Payment[data.downpayments.Length + data.installments.Length];
                     int index = 0;
-                    for (int i = 0; index < data.downpayments.Length; index++, i++)
+                    for (int i = 0; i < data.downpayments.Length; index++, i++)
                     {
                         var downpayment = data.downpayments[i];
                         payments[index] = new Payment(downpayment.title, downpayment.percent, downpayment.dateInLetter, downpayment.fee);
                     }
-                    for (int i = 0; index < data.installments.Length; index++, i++)
+                    for (int i = 0; i < data.installments.Length; index++, i++)
                     {
                         var installment = data.installments[i];
                         payments[index] = new Payment(installment.title, installment.percent, installment.dateInLetter, installment.fee);
@@ -41,12 +41,12 @@ namespace Unit.Logic.Module
                 {
                     AditionalFee[] aditionalFees = new AditionalFee[data.otherFees.Length + data.surpluspayments.Length];
                     int index = 0;
-                    for (int i = 0; index < data.otherFees.Length; index++, i++)
+                    for (int i = 0; i < data.otherFees.Length; index++, i++)
                     {
                         var otherFee = data.otherFees[i];
                         aditionalFees[index] = new AditionalFee(otherFee.title, otherFee.percent, otherFee.fee);
                     }
-                    for (int i = 0; index < data.surpluspayments.Length; index++, i++)
+                    for (int i = 0; i < data.surpluspayments.Length; index++, i++)
                     {
                         var surpluspayment = data.surpluspayments[i];
                         aditionalFees[index] = new AditionalFee(surpluspayment.title, surpluspayment.percent, surpluspayment.fee);

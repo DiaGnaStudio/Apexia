@@ -16,10 +16,10 @@ namespace Unit.View.Components.Installments
         public void SetData(string name, int cost, int time, string type, string area)
         {
             nameText.SetText(name);
-            costText.SetText(string.Format($"AED {NUMBER_FORMAT}", cost));
+            costText.SetText(string.Format($"OMR {NUMBER_FORMAT}", cost));
             timeText.SetText(string.Format($"{NUMBER_FORMAT} Months", time));
             typeText.SetText(type);
-            timeText.SetText(string.Format($"{NUMBER_FORMAT} FT2", area));
+            areaText.SetText(string.Format($"{NUMBER_FORMAT} SQM", area));
         }
     }
 }
