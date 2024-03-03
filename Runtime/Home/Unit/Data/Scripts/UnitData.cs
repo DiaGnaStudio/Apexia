@@ -1,6 +1,6 @@
 namespace Unit.Data
 {
-    public struct UnitData
+    public class UnitData
     {
         public UnitData(string name, int area, int floor, int price, UnitTypeCard unitTypeCard, Orientation orientation, Availabilty availability, State state)
         {
@@ -23,6 +23,9 @@ namespace Unit.Data
         public Availabilty Availability { private set; get; }
         public State State { get; private set; }
 
-        public static UnitData DEFAULT => new() { Name = "DEFAULT" };
+        public static UnitData DEFAULT => new("DEFAULT", 0, 0, 0, null, Orientation.West, Availabilty.Unavailable, State.Negotiable);
+
+        public void SetPrice(int value) =>
+            Price = value;
     }
 }

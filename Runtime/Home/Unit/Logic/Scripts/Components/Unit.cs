@@ -79,6 +79,8 @@ namespace Unit.Logic.Components
 
         public void Highlight(bool value)
         {
+            if (!IsInitialize) return;
+
             borderRenderer.Apply(Data.Availability, false);
             objectSelect.SetColliderAction(value);
 

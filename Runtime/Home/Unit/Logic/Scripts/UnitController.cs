@@ -33,6 +33,19 @@ namespace Unit.Logic
             {
                 building.LoadUnits(Get);
 
+                foreach (var (id, data) in infos)
+                {
+                    if (data.State == State.Saleable)
+                    {
+                        paymentLoaderAPI.Load(id, LoadInstallment);
+
+                        void LoadInstallment(UnitInstallmentsData installmentsData)
+                        {
+                            data.SetPrice(installmentsData.UnitInfo.Price);
+                        }
+                    }
+                }
+
                 UnitData Get(string id)
                 {
                     foreach (var info in infos)
@@ -49,14 +62,19 @@ namespace Unit.Logic
         {
             building.InitializeUnits(Select);
 
-            void Select(UnitData data, int code, string id)
+            void Select(UnitData unitData, int code, string id)
             {
-                var map = unitMapStorage.Get(code, data.Floor);
+                var map = unitMapStorage.Get(code, unitData.Floor);
 
-                paymentLoaderAPI.Load(id, LoadInstallment);
+                if (unitData.State == State.Saleable)
+                    paymentLoaderAPI.Load(id, LoadInstallment);
+                else
+                    onSelect.Invoke(unitData, UnitInstallmentsData.Empty, map);
 
-                void LoadInstallment(UnitInstallmentsData installmentsData) =>
-                    onSelect.Invoke(data, installmentsData, map);
+                void LoadInstallment(UnitInstallmentsData installmentsData)
+                {
+                    onSelect.Invoke(unitData, installmentsData, map);
+                }
             }
         }
 

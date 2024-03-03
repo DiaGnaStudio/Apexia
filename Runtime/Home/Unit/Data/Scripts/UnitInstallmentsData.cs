@@ -13,6 +13,8 @@ namespace Unit.Data
         public Payment[] Payments { get; private set; }
         public AditionalFee[] AditionalFees { get; private set; }
 
+        public static UnitInstallmentsData Empty => new();
+
         public struct Info
         {
             public Info(string name, int price, int duration, string type, string area)
