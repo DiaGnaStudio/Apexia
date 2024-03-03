@@ -9,9 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da33acbc8c2c80b409724deafc2c3e02, type: 3}
-  m_Name: OrbitState - Surrounding
+  m_Script: {fileID: 11500000, guid: 48ffc167629a48042a974b4a9ec6f70f, type: 3}
+  m_Name: FirstPersonState
   m_EditorClassIdentifier: 
   <FieldOfView>k__BackingField: 60
-  <Zoom>k__BackingField: {fileID: 11400000, guid: c19e45c619097d14dacdfb64b54c4a85, type: 2}
-  <Orbit>k__BackingField: {fileID: 11400000, guid: c4b1ad68ce8d9d64db87cd07ef827892, type: 2}
+  <firstPersonModuleCard>k__BackingField: {fileID: 11400000, guid: dc1b77cfb6e7b034cb05b6f66fc24bb2, type: 2}

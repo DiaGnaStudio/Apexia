@@ -31,6 +31,37 @@ Transform:
   m_Father: {fileID: 8151761556725651198}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3713936003631239829
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8958408347415090088}
+  m_Layer: 0
+  m_Name: 'MarsaPlaza_Target '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8958408347415090088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3713936003631239829}
+  m_LocalRotation: {x: 0.0537026, y: -0.94495445, z: 0.20081453, w: 0.25268713}
+  m_LocalPosition: {x: -2325.855, y: 19.222775, z: 828.5197}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8151761556725651198}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6115682985841268035
 GameObject:
   m_ObjectHideFlags: 0
@@ -163,6 +194,8 @@ Transform:
   - {fileID: 7513784205357269386}
   - {fileID: 9134949689921689387}
   - {fileID: 2317093464530160020}
+  - {fileID: 5128026584074628470}
+  - {fileID: 8958408347415090088}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -185,6 +218,7 @@ MonoBehaviour:
   - {fileID: 572787695347639730}
   - {fileID: 4469831082088396882}
   - {fileID: 2921579532848393971}
+  - {fileID: 1253192846927008942}
 --- !u!1001 &1127953789504232111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -634,4 +668,81 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3597853971521484614, guid: 0dadf6655bc82ae43803dab134636e0e, type: 3}
   m_PrefabInstance: {fileID: 6401527024933476075}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &8192822238498859768
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 8151761556725651198}
+    m_Modifications:
+    - target: {fileID: 1533847005199312654, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_Name
+      value: MarsaPlaza
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_RootOrder
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2277.608
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 60.468063
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 909.51227
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.25441343
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.059276618
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.94010013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.21902496
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6978041930202496598, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+      propertyPath: targetPoint
+      value: 
+      objectReference: {fileID: 8958408347415090088}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+--- !u!114 &1253192846927008942 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6978041930202496598, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+  m_PrefabInstance: {fileID: 8192822238498859768}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4b0583c0d702a44a8c5649f513bd56a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &5128026584074628470 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3934080543467112334, guid: 74ccbdf1bf540d6449c4e31dd8fd1c8b, type: 3}
+  m_PrefabInstance: {fileID: 8192822238498859768}
   m_PrefabAsset: {fileID: 0}

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12b7de0b21b8560438d70caccc603716, type: 3}
   m_Name: SurrondingController
   m_EditorClassIdentifier: 
-  camPointPrefab: {fileID: 6978628498399259788, guid: 5675cb16d46c3394aa34032f13b82bcb, type: 3}
+  camPointPrefab: {fileID: 6978628498399259788, guid: bd8111296adb03044bb1f79b5aafd70b, type: 3}
