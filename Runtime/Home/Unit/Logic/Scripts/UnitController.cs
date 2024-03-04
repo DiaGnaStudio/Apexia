@@ -8,6 +8,7 @@ using Object = UnityEngine.Object;
 
 namespace Unit.Logic
 {
+
     public class UnitController
     {
         private readonly UnitLoader loaderAPI;
@@ -19,11 +20,16 @@ namespace Unit.Logic
         private readonly Building building;
         private readonly FilterHandler filter;
 
+        private UnitCamera camera;
+
         public UnitController()
         {
+            camera = UnitCamera.LoadInstance;
+            camera.Initialize();
+
             unitTypeStorage = UnitTypeRepo.PreLoad;
             unitMapStorage = UnitMapRepo.PreLoad;
-            building = Object.FindObjectOfType<Building>();
+            building = Object.FindObjectOfType<Building>(true);
             filter = new FilterHandler(building.ApplyFilter);
 
             loaderAPI = new(unitTypeStorage.Get);
@@ -86,5 +92,8 @@ namespace Unit.Logic
 
         public void UpdateFilter(UnitFilter filter) =>
             this.filter.Update(filter);
+
+        public void Show() => 
+            camera.SetPoints();
     }
 }

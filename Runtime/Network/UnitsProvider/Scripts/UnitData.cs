@@ -1,5 +1,3 @@
-using Codice.CM.Common.Serialization;
-
 namespace Units.Provider.Data
 {
     public class UnitData

@@ -36,6 +36,7 @@ namespace Unit
         {
             if (parent != null)
                 view.SetParent(parent);
+            logic.Show();
             view.Show();
         }
 
