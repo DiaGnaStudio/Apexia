@@ -6,11 +6,8 @@ namespace Unit.Logic.Components
     [RequireComponent(typeof(Collider))]
     internal class ObjectSelect : MonoBehaviour
     {
-        private Collider _collider;
+        [SerializeField] private Collider _collider;
         private Action OnClick;
-
-        private void Awake() => 
-            _collider = GetComponent<Collider>();
 
         public void SetSlick(Action onClick) => 
             OnClick = onClick;

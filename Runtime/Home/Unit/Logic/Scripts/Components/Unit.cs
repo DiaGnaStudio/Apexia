@@ -12,9 +12,9 @@ namespace Unit.Logic.Components
 
         [Header("Components")]
         [SerializeField] private UCamPoint ballconyCamPoint;
-        private UnitBorderRenderer borderRenderer;
-        private UnitBodyRenderer bodyRenderer;
-        private ObjectSelect objectSelect;
+        [SerializeField] private UnitBorderRenderer borderRenderer;
+        [SerializeField] private UnitBodyRenderer bodyRenderer;
+        [SerializeField] private ObjectSelect objectSelect;
 
         private const float DOUBLE_TAP_TIME = .6f;
         private float firstTapTime;
@@ -25,16 +25,12 @@ namespace Unit.Logic.Components
         public bool IsInitialize { get; private set; }
         private Action<UnitData, int, string> OnSelect;
 
-        public void Awake()
+        public void Start()
         {
-            borderRenderer = GetComponentInChildren<UnitBorderRenderer>();
-            bodyRenderer = GetComponentInChildren<UnitBodyRenderer>();
-            objectSelect = GetComponentInChildren<ObjectSelect>();
-
             objectSelect.SetSlick(Click);
         }
 
-        public void SetSelectAction(Action<UnitData, int, string> onSelect) => 
+        public void SetSelectAction(Action<UnitData, int, string> onSelect) =>
             OnSelect = onSelect;
 
         public void LoadData(Func<string, UnitData> dataGetter)

@@ -7,13 +7,8 @@ namespace Unit.Logic.Components
 {
     internal class Building : MonoBehaviour
     {
-        private Unit[] units;
+        [SerializeField] private Unit[] units;
         private readonly List<Unit> filterList = new();
-
-        private void Awake()
-        {
-            units = GetComponentsInChildren<Unit>();
-        }
 
         public void InitializeUnits(Action<UnitData, int, string> onSelect)
         {

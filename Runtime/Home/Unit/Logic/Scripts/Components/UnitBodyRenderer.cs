@@ -9,12 +9,7 @@ namespace Unit.Logic.Components
     {
         [SerializeField] private UnitMaterialRepo materialRepo;
 
-        private MeshRenderer meshRenderer;
-
-        private void Awake()
-        {
-            meshRenderer = GetComponent<MeshRenderer>();
-        }
+        [SerializeField] private MeshRenderer meshRenderer;
 
         public void Apply(Availabilty availabilty) =>
             meshRenderer.material = materialRepo.GetBody(availabilty);
