@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3048eb5b8cd2db743a70bddf10c9c990, type: 3}
   m_Name: ExploreController
   m_EditorClassIdentifier: 
-  camPointPrefab: {fileID: 5100498234726380091, guid: bd3d89d0b3add4943af7da49b1542c78, type: 3}
+  camPointPrefab: {fileID: 5100498234726380091, guid: ef5612eabd26a6244b992b81708caa5e, type: 3}
