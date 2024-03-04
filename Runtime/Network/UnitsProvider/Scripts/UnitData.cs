@@ -2,7 +2,7 @@ namespace Units.Provider.Data
 {
     public class UnitData
     {
-        public string id;
+        public int id;
         public string name;
         public string area;
         public int floor;

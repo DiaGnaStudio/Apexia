@@ -10,13 +10,13 @@ namespace Unit.Logic.Components
         [SerializeField] private Unit[] units;
         private readonly List<Unit> filterList = new();
 
-        public void InitializeUnits(Action<UnitData, int, string> onSelect)
+        public void InitializeUnits(Action<UnitData, int, int> onSelect)
         {
             foreach (var unit in units)
                 unit.SetSelectAction(onSelect);
         }
 
-        public void LoadUnits(Func<string, UnitData> dataGetter)
+        public void LoadUnits(Func<int, UnitData> dataGetter)
         {
             foreach (var unit in units)
                 unit.LoadData(dataGetter);

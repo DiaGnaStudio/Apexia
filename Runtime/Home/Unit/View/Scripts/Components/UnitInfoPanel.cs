@@ -2,6 +2,7 @@ using Gallery.Assets;
 using System;
 using TMPro;
 using Unit.Data;
+using Unit.View.Components.Info;
 using Unit.View.SharedTypes;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,16 +12,17 @@ namespace Unit.View.Components
 {
     internal class UnitInfoPanel : UPanel
     {
-        [SerializeField] private TextMeshProUGUI nameText;
-        [SerializeField] private TextMeshProUGUI suitSizeText;
-        [SerializeField] private TextMeshProUGUI typeText;
-        [SerializeField] private TextMeshProUGUI availabilityText;
-        [SerializeField] private TextMeshProUGUI orientationText;
+        [SerializeField] private BookmarkButton bookmark;
+        [SerializeField] private TMP_Text nameText;
+        [SerializeField] private InfoText areaText;
+        [SerializeField] private InfoText typeText;
+        [SerializeField] private InfoText availabilityText;
+        //[SerializeField] private InfoText orientationText;
         [SerializeField] private Button installmentsBtn;
         [SerializeField] private Button mapBtn;
         [SerializeField] private Button galleryBtn;
-        [SerializeField] private Button unitViewBtn;
-        [SerializeField] private Button dollHouseBtn;
+        //[SerializeField] private Button unitViewBtn;
+        //[SerializeField] private Button dollHouseBtn;
         [SerializeField] private Button goToBalconyBtn;
 
         private UnitData currentCard;
@@ -34,14 +36,16 @@ namespace Unit.View.Components
         public void SetData(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {
             nameText.SetText(data.Name);
-            suitSizeText.SetText(data.Area.ToString());
-            typeText.SetText(data.UnitTypeCard.Name);
-            availabilityText.SetText(data.Availability.ToString());
-            orientationText.SetText(data.Orientation.ToString());
+            areaText.Set(data.Area.ToString());
+            typeText.Set(data.UnitTypeCard.Name);
+            availabilityText.Set(data.Availability.ToString());
+            //orientationText.Set(data.Orientation.ToString());
 
             currentCard = data;
             currentInstallmentsData = installmentsData;
             currentMap = map;
+
+            bookmark.SetData(data.Id);
 
             if (data.State == State.Negotiable)
                 installmentsBtn.gameObject.SetActive(false);
@@ -57,8 +61,8 @@ namespace Unit.View.Components
             installmentsBtn.onClick.AddListener(() => SetInstallmentsAction(actions.OpenInstallments));
             mapBtn.onClick.AddListener(() => SetMapAction(actions.OpenMap));
             galleryBtn.onClick.AddListener(() => SetGalleryAction(actions.OpenGallery));
-            unitViewBtn.onClick.AddListener(() => SetUnitViewAction(actions.OpenBalcony));
-            dollHouseBtn.onClick.AddListener(() => SetDollHouseAction(actions.OpenDollHouse));
+            //unitViewBtn.onClick.AddListener(() => SetUnitViewAction(actions.OpenBalcony));
+            //dollHouseBtn.onClick.AddListener(() => SetDollHouseAction(actions.OpenDollHouse));
             goToBalconyBtn.onClick.AddListener(SetBalconyAction);
 
             OnClose = actions.Close;
@@ -72,11 +76,11 @@ namespace Unit.View.Components
             void SetGalleryAction(Action<GalleryAsset> action) =>
                 action.Invoke(currentCard.UnitTypeCard.Gallery);
 
-            void SetUnitViewAction(Action<UnitData> action) =>
-                action.Invoke(currentCard);
+            //void SetUnitViewAction(Action<UnitData> action) =>
+            //    action.Invoke(currentCard);
 
-            void SetDollHouseAction(Action<UnitData> action) =>
-                action.Invoke(currentCard);
+            //void SetDollHouseAction(Action<UnitData> action) =>
+            //    action.Invoke(currentCard);
 
             void SetBalconyAction() =>
                 Application.OpenURL(currentCard.UnitTypeCard.ViewLink);

@@ -20,7 +20,9 @@ namespace Unit.Logic
         private readonly Building building;
         private readonly FilterHandler filter;
 
-        private UnitCamera camera;
+        private readonly UnitCamera camera;
+
+        private readonly BookmarkHandler bookmark;
 
         public UnitController()
         {
@@ -35,7 +37,7 @@ namespace Unit.Logic
             loaderAPI = new(unitTypeStorage.Get);
             loaderAPI.LoadAll(CompleteLoad);
 
-            void CompleteLoad((string id, UnitData data)[] infos)
+            void CompleteLoad((int id, UnitData data)[] infos)
             {
                 building.LoadUnits(Get);
 
@@ -52,7 +54,7 @@ namespace Unit.Logic
                     }
                 }
 
-                UnitData Get(string id)
+                UnitData Get(int id)
                 {
                     foreach (var info in infos)
                         if (info.id == id)
@@ -68,7 +70,7 @@ namespace Unit.Logic
         {
             building.InitializeUnits(Select);
 
-            void Select(UnitData unitData, int code, string id)
+            void Select(UnitData unitData, int code, int id)
             {
                 var map = unitMapStorage.Get(code, unitData.Floor);
 
@@ -93,7 +95,16 @@ namespace Unit.Logic
         public void UpdateFilter(UnitFilter filter) =>
             this.filter.Update(filter);
 
-        public void Show() => 
+        public void Show() =>
             camera.SetPoints();
+
+        public void SetBookmark(int unitId, bool isBookmark) =>
+            bookmark.SetBookmark(unitId, isBookmark);
+
+        public bool IsBookmarkEnable() =>
+            bookmark.IsEnable();
+
+        public bool IsBookmarked(int unitId) =>
+            bookmark.IsBookmarked(unitId);
     }
 }

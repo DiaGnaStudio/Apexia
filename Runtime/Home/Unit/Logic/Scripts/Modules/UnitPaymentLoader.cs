@@ -8,7 +8,7 @@ namespace Unit.Logic.Module
 {
     internal class UnitPaymentLoader
     {
-        public void Load(string id, Action<UnitInstallmentsData> onLoad)
+        public void Load(int id, Action<UnitInstallmentsData> onLoad)
         {
             UnitPaymentService.GetById(id, Get, Error);
 

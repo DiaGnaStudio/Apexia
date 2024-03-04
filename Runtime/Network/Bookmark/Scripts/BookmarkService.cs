@@ -28,18 +28,7 @@ namespace Bookmark.Provider
 
         public static void Bookmark(int unitId, int clientId, Action OnLoad, Action<string> onError)
         {
-            provider.Bookmark(new int[1] { unitId }, clientId, LoginCallback);
-
-            void LoginCallback(UnityWebRequest callbackReq)
-            {
-                if (callbackReq.error != null)
-                {
-                    onError.Invoke(callbackReq.downloadHandler.text);
-                    return;
-                }
-
-                OnLoad.Invoke();
-            }
+            Bookmark(new int[1] { unitId }, clientId, OnLoad, onError);
         }
     }
 }

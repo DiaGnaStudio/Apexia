@@ -5,7 +5,7 @@ namespace UnitPayment.Provider.Test
 {
     public class UnitPaymentProviderRuntimeTest : MonoBehaviour
     {
-        [SerializeField] private string id;
+        [SerializeField] private int id;
 
         [ContextMenu("GetById")]
         private void GetById()

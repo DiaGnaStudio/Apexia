@@ -26,6 +26,8 @@ namespace Unit
                                             OpenDollHouse,
                                             logic.UnSelectUnit);
 
+            view.InitializeBookmark(logic.SetBookmark, logic.IsBookmarkEnable, logic.IsBookmarked);
+
             void OpenDollHouse(UnitData card)
             {
                 SceneManager.LoadScene(2);

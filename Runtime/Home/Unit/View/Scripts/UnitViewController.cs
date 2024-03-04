@@ -2,6 +2,7 @@
 using System;
 using Unit.Data;
 using Unit.View.Components;
+using Unit.View.Components.Info;
 using Unit.View.SharedTypes;
 using UnityEngine;
 using UScreens;
@@ -40,6 +41,9 @@ namespace Unit.View
                 panel.Show(data);
             }
         }
+
+        public void InitializeBookmark(Action<int, bool> onClick, Func<bool> isIntractable, Func<int, bool> isBookmarked) => 
+            BookmarkButton.Initialize(onClick, isIntractable, isBookmarked);
 
         public void Show(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {

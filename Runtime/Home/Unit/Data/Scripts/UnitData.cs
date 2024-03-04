@@ -2,8 +2,9 @@ namespace Unit.Data
 {
     public class UnitData
     {
-        public UnitData(string name, int area, int floor, int price, UnitTypeCard unitTypeCard, Orientation orientation, Availabilty availability, State state)
+        public UnitData(int id, string name, int area, int floor, int price, UnitTypeCard unitTypeCard, Orientation orientation, Availabilty availability, State state)
         {
+            Id = id;
             Name = name;
             Area = area;
             Floor = floor;
@@ -14,6 +15,7 @@ namespace Unit.Data
             State = state;
         }
 
+        public int Id { get; private set; }
         public string Name { private set; get; }
         public int Area { private set; get; }
         public int Floor { private set; get; }
@@ -23,7 +25,7 @@ namespace Unit.Data
         public Availabilty Availability { private set; get; }
         public State State { get; private set; }
 
-        public static UnitData DEFAULT => new("DEFAULT", 0, 0, 0, null, Orientation.West, Availabilty.Unavailable, State.Negotiable);
+        public static UnitData DEFAULT => new(0, "DEFAULT", 0, 0, 0, null, Orientation.West, Availabilty.Unavailable, State.Negotiable);
 
         public void SetPrice(int value) =>
             Price = value;

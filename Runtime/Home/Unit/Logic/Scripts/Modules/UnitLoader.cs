@@ -15,7 +15,7 @@ namespace Unit.Logic.Module
             GetUnitType = getUnitType;
         }
 
-        public void Load(int id, Action<(string, UnitData)> onLoad)
+        public void Load(int id, Action<(int, UnitData)> onLoad)
         {
             UnitServices.GetById(id, Get, Error);
 
@@ -28,23 +28,22 @@ namespace Unit.Logic.Module
                 Debug.LogError(message);
         }
 
-        public void LoadAll(Action<(string, UnitData)[]> onLoad)
+        public void LoadAll(Action<(int, UnitData)[]> onLoad)
         {
             UnitServices.GetAll(Get, Error);
 
             void Get(Units.Provider.Data.UnitData[] datas)
             {
-                (string, UnitData)[] infos = datas.Select(data => Convert(data)).ToArray();
-
-                onLoad.Invoke(infos);
+                onLoad.Invoke(datas.Select(data => Convert(data)).ToArray());
             }
 
             void Error(string message) =>
                 Debug.LogError(message);
         }
 
-        private (string, UnitData) Convert(Units.Provider.Data.UnitData data)
+        private (int, UnitData) Convert(Units.Provider.Data.UnitData data)
         {
+            var id = data.id;
             var name = data.name;
             var area = int.Parse(data.area);
             var floor = data.floor;
@@ -54,7 +53,7 @@ namespace Unit.Logic.Module
             var availability = GetAvailabilty(data.status);
             var state = GetState(data.negotiationStatus);
 
-            return (data.id, new(name, area, floor, price, unitTypeCard, orientation, availability, state));
+            return (data.id, new(id, name, area, floor, price, unitTypeCard, orientation, availability, state));
 
             Orientation GetOrientation(string direction)
             {

@@ -23,19 +23,19 @@ namespace Unit.Logic.Components
 
         public UnitData Data { get; private set; }
         public bool IsInitialize { get; private set; }
-        private Action<UnitData, int, string> OnSelect;
+        private Action<UnitData, int, int> OnSelect;
 
         public void Start()
         {
             objectSelect.SetSlick(Click);
         }
 
-        public void SetSelectAction(Action<UnitData, int, string> onSelect) =>
+        public void SetSelectAction(Action<UnitData, int, int> onSelect) =>
             OnSelect = onSelect;
 
-        public void LoadData(Func<string, UnitData> dataGetter)
+        public void LoadData(Func<int, UnitData> dataGetter)
         {
-            Data = dataGetter(unitId);
+            Data = dataGetter(int.Parse(unitId));
 
             Availabilty availability = Data.Availability;
             bodyRenderer.Apply(availability);
@@ -58,7 +58,7 @@ namespace Unit.Logic.Components
 
             void Select()
             {
-                OnSelect?.Invoke(Data, unitCode, unitId);
+                OnSelect?.Invoke(Data, unitCode, int.Parse(unitId));
                 isShow = true;
                 borderRenderer.Apply(Data.Availability, true);
             }

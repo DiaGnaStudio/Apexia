@@ -10,7 +10,7 @@ namespace UnitPayment.Provider
     {
         [SerializeField] private HTTPRequestCard GetByIdAPI;
 
-        public void GetById(string id, Action<UnityWebRequest> responseCallback)
+        public void GetById(int id, Action<UnityWebRequest> responseCallback)
         {
             var reqData = GetByIdAPI.CreateRequestData();
             reqData.AppendUrl(id + "/payment-plan/records");
