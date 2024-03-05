@@ -15,11 +15,11 @@ namespace CustomerInfo.View.Profile.Components
 
         [SerializeField] private Button deleteButton;
 
-        private UnifInfo _info;
+        private OrderInfo _info;
 
-        private static Action<UnifInfo> OnDelete;
+        private static Action<OrderInfo> OnDelete;
 
-        public void SetData(UnifInfo info)
+        public void SetData(OrderInfo info)
         {
             _info = info;
 
@@ -60,7 +60,7 @@ namespace CustomerInfo.View.Profile.Components
             DestroyImmediate(gameObject);
         }
 
-        public static void SetDeleteAction(Action<UnifInfo> action) =>
+        public static void SetDeleteAction(Action<OrderInfo> action) =>
             OnDelete = action;
     }
 

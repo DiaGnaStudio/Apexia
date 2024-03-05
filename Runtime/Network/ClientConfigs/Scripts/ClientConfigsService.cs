@@ -1,4 +1,7 @@
+using ClientConfigs.Provider.Data;
+using Newtonsoft.Json;
 using System;
+using UnityEngine;
 using UnityEngine.Networking;
 
 namespace ClientConfigs.Provider
@@ -10,9 +13,9 @@ namespace ClientConfigs.Provider
         static ClientConfigsService() =>
             provider = ClientConfigsProvider.Load;
 
-        public static void Send(string firstName, string lastName, ulong phone, Action OnLoad, Action<string> onError)
+        public static void Send(string firstName, string lastName, string phone, string email, Action<Client> OnLoad, Action<string> onError)
         {
-            provider.Send(firstName, lastName, phone, LoginCallback);
+            provider.Send(firstName, lastName, phone, email, LoginCallback);
 
             void LoginCallback(UnityWebRequest callbackReq)
             {
@@ -22,7 +25,10 @@ namespace ClientConfigs.Provider
                     return;
                 }
 
-                OnLoad.Invoke();
+                var data = JsonConvert.DeserializeObject<ClientResponse>(callbackReq.downloadHandler.text);
+                Debug.Log(data.client.ToString());
+
+                OnLoad.Invoke(data.client);
             }
         }
     }

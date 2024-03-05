@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Continue as gust
+  m_text: Continue as guest
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: af685151db91d9f4ba92f399ee7b387e, type: 2}
   m_sharedMaterial: {fileID: -1879939588580746938, guid: af685151db91d9f4ba92f399ee7b387e, type: 2}

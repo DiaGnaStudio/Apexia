@@ -1,8 +1,8 @@
-﻿namespace CustomerInfo.Data
+namespace CustomerInfo.Data
 {
-    public struct UnifInfo
+    public class OrderInfo
     {
-        public UnifInfo(string id, string unitName, string unitType, int floor, int price, int area)
+        public OrderInfo(string id, string unitName, string unitType, int floor, int price, int area)
         {
             Id = id;
             UnitName = unitName;
@@ -13,11 +13,15 @@
         }
 
         public string Id { get; private set; }
-        public string UnitName { get; private set; }
-        public string UnitType { get; private set; }
-        public int Floor { get; private set; }
-        public int Price { get; private set; }
-        public int Area { get; private set; }
 
+        public string UnitName { get; private set; }
+
+        public string UnitType { get; private set; }
+
+        public int Floor { get; private set; }
+
+        public int Price { get; private set; }
+
+        public int Area { get; private set; }
     }
 }

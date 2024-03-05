@@ -20,8 +20,8 @@ namespace CustomerInfo.View.Test
             (Sprite avatar, string username) GetUser() => (null, "NEW USER");
             void Share() => Debug.Log("Click on share");
             void ClearAll() => Debug.Log("Click on clear all");
-            void Delete(UnifInfo info) => Debug.Log($"Delete the bookmard ({info})");
-            UnifInfo[] GetData() => new UnifInfo[0];
+            void Delete(OrderInfo info) => Debug.Log($"Delete the bookmard ({info})");
+            OrderInfo[] GetData() => new OrderInfo[0];
             void Login() => Debug.Log("Click on login");
             void GuestLogin() => Debug.Log("Click on guest login");
         }

@@ -8,7 +8,9 @@ namespace CustomerInfo.View.SignIn
 {
     public class SignInPanel : UPanel
     {
-        [SerializeField] private TextInputField nameInput;
+        [SerializeField] private TextInputField firstNameInput;
+        [SerializeField] private TextInputField lastNameInput;
+        [SerializeField] private TextInputField phoneInput;
         [SerializeField] private TextInputField emailInput;
         [SerializeField] private LoginButton nextBtn;
         [SerializeField] private Button guestBtn;
@@ -16,8 +18,14 @@ namespace CustomerInfo.View.SignIn
 
         private Action OnLogin;
 
-        public void OnChangeName(Action<string> onChanged) =>
-            nameInput.SetChangeInput(onChanged);
+        public void OnChangeName(Action<string> onfirstNameChanged, Action<string> onlastNameChanged)
+        {
+            firstNameInput.SetChangeInput(onfirstNameChanged);
+            lastNameInput.SetChangeInput(onlastNameChanged);
+        }
+
+        public void OnChangePhone(Action<string> onChanged) =>
+            phoneInput.SetChangeInput(onChanged);
 
         public void OnChangeEmail(Action<string> onChanged) =>
             emailInput.SetChangeInput(onChanged);
@@ -29,7 +37,7 @@ namespace CustomerInfo.View.SignIn
             void Click()
             {
                 action.Invoke();
-                OnLogin.Invoke();
+                OnLogin?.Invoke();
             }
         }
 
@@ -60,11 +68,13 @@ namespace CustomerInfo.View.SignIn
 
         public void ClearInput()
         {
-            nameInput.Clear();
+            firstNameInput.Clear();
+            lastNameInput.Clear();
+            phoneInput.Clear();
             emailInput.Clear();
         }
 
-        public void SetCloseAction(Action action) => 
+        public void SetCloseAction(Action action) =>
             closeBtn.onClick.AddListener(action.Invoke);
     }
 }

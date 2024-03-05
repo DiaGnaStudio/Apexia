@@ -399,6 +399,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9c2db9650874a24ca0ce77f4b6820f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  units: []
 --- !u!4 &933627931
 Transform:
   m_ObjectHideFlags: 0
@@ -839,6 +840,10 @@ PrefabInstance:
     - target: {fileID: 1406155929005907246, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: m_Name
       value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 1406155929005907246, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1901629475053857009, guid: cfb8b8500f48b7e4aa35a95846a0286a, type: 3}
       propertyPath: m_LocalPosition.x

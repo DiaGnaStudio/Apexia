@@ -19,15 +19,15 @@ namespace CustomerInfo.View
             View.SignInPanel.Hide();
             View.SignInPanel.SetCloseAction(Hide);
 
-            View.SignInPanel.SetGlobalLoginAction(View.ProfilePanel.Show);
+            //View.SignInPanel.SetGlobalLoginAction(View.ProfilePanel.Show);
         }
 
         public void Initialize(Action signOut,
                                Func<(Sprite avatar, string username)> getter,
                                Action share,
                                Action clearAll,
-                               Action<UnifInfo> deleteBookmark,
-                               Func<UnifInfo[]> infoGetter,
+                               Action<OrderInfo> deleteBookmark,
+                               Func<OrderInfo[]> infoGetter,
                                Action userlogin,
                                Action guestLogin)
         {
@@ -49,17 +49,25 @@ namespace CustomerInfo.View
         public void SetLoginIntractable(bool value) =>
             View.SignInPanel.SetButtonIntractable(value);
 
-        public void OnChangeName(Action<string> onChanged) =>
-            View.SignInPanel.OnChangeName(onChanged);
+        public void SetChangeInfo(Action<string> onfirstNameChanged, Action<string> onlastNameChanged, Action<string> onPhoneChanged, Action<string> onEmailChanged)
+        {
+            View.SignInPanel.OnChangeName(onfirstNameChanged, onlastNameChanged);
+            View.SignInPanel.OnChangePhone(onPhoneChanged);
+            View.SignInPanel.OnChangeEmail(onEmailChanged);
+        }
 
-        public void OnChangeEmail(Action<string> onChanged) =>
-            View.SignInPanel.OnChangeEmail(onChanged);
-
-        public void ShowProfile() =>
+        public void ShowProfile()
+        {
+            View.SignInPanel.Hide();
             View.ProfilePanel.Show();
+        }
 
-        public void ShowSignUp() =>
+        public void ShowSignUp()
+        {
+            View.ProfilePanel.Hide();
+            View.SignInPanel.ClearInput();
             View.SignInPanel.Show();
+        }
 
         public override void Hide()
         {

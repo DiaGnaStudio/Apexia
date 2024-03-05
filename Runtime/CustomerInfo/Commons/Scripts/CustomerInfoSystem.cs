@@ -12,12 +12,11 @@ namespace CustomerInfo
 
         static CustomerInfoSystem()
         {
-            logic = new();
             view = UScreenRepo.Get<CustomerInfoViewController>();
+            logic = new(view.SetLoginIntractable, view.ShowProfile);
 
-            view.SetLoginIntractable(true);
-
-            view.Initialize(logic.SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteBookmark, logic.GetAll, logic.SignIn, logic.SignInAsGuest);
+            view.SetChangeInfo(logic.CheckFirstName, logic.CheckLastName, logic.CheckPhone, logic.CheckEmail);
+            view.Initialize(logic.SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
         }
 
         public static void Initialzie(Action signOut)

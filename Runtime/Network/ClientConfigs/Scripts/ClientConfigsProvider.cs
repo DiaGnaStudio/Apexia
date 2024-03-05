@@ -11,15 +11,17 @@ namespace ClientConfigs.Provider
     {
         [SerializeField] private HTTPRequestCard sendAPI;
 
-        public void Send(string firstName, string lastName, ulong phone, Action<UnityWebRequest> responseCallback)
+        public void Send(string firstName, string lastName, string phone, string email, Action<UnityWebRequest> responseCallback)
         {
             var reqData = sendAPI.CreateRequestData();
+            reqData.AppendUrl(email);
             reqData.BodyJson = JsonConvert.SerializeObject(new
             {
                 first_name = firstName,
                 last_name = lastName,
                 phone
             });
+            Debug.Log(reqData.BodyJson);
             var req = reqData.CreateRequest();
             req.SetCallback(responseCallback);
             req.Send();

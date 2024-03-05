@@ -15,16 +15,16 @@ namespace CustomerInfo.View.Profile
         [SerializeField] private BookmarkCreator creator;
         [SerializeField] private Button closeBtn;
 
-        private Func<UnifInfo[]> DataGetter;
+        private Func<OrderInfo[]> DataGetter;
         private Func<(Sprite avatar, string username)> UserDataGetter;
 
         public void SetCustomerData(Func<(Sprite avatar, string username)> getter) =>
             UserDataGetter = getter;
 
-        public void SetBookmarksGetter(Func<UnifInfo[]> getter) =>
+        public void SetBookmarksGetter(Func<OrderInfo[]> getter) =>
             DataGetter = getter;
 
-        public void SetActions(Action signOut, Action share, Action clearAll, Action<UnifInfo> deleteBookmark)
+        public void SetActions(Action signOut, Action share, Action clearAll, Action<OrderInfo> deleteBookmark)
         {
             userInfo.SetSignOutAction(signOut);
             shareButton.SetAction(share);

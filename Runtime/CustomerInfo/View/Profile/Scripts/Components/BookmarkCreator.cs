@@ -8,7 +8,7 @@ namespace CustomerInfo.View.Profile.Components
     {
         [SerializeField] private Pool<UnitInfoSlot> itemPool;
 
-        public void SetDatas(UnifInfo[] infos)
+        public void SetDatas(OrderInfo[] infos)
         {
             itemPool.DeactiveAllInstance();
 

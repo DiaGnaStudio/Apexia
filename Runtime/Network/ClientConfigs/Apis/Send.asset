@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5cf1889433062440a9819a0016fc884, type: 3}
   m_Name: Send
   m_EditorClassIdentifier: 
-  baseCard: {fileID: 0}
+  baseCard: {fileID: 11400000, guid: a7b0f84bc9d7c394786f6e0aba328a87, type: 2}
   headers: []
-  <URL>k__BackingField: /api/admin/client/test@test.com
+  <URL>k__BackingField: /api/admin/client/
   <Method>k__BackingField: 1
   <HaveAuth>k__BackingField: 1
   <BodyJson>k__BackingField: 

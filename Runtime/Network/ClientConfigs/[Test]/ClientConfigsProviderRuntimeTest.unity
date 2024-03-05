@@ -167,9 +167,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4676c2ddc3b94c541b250e02108653b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstName: 
-  lastName: 
-  phone: 0
+  firstName: test
+  lastName: testi
+  phone: 0012345678
+  email: test@test.com
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
