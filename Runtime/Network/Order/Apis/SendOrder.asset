@@ -16,7 +16,7 @@ MonoBehaviour:
   headers: []
   <URL>k__BackingField: /api/admin/order
   <Method>k__BackingField: 1
-  <HaveAuth>k__BackingField: 0
+  <HaveAuth>k__BackingField: 1
   <BodyJson>k__BackingField: 
   postFields: []
   postFormFields: []
