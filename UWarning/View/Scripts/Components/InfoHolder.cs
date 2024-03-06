@@ -9,8 +9,11 @@ namespace UWarning.View.Conponents
         [SerializeField] private Image icon;
         [SerializeField] private TMP_Text descriptionText;
 
-        public void SetIcon(Sprite sprite) =>
+        public void SetIcon(Sprite sprite)
+        {
+            icon.enabled = sprite != null;
             icon.sprite = sprite;
+        }
 
         public void SetDescription(string description)
         {
