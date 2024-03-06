@@ -18,11 +18,14 @@ namespace ProjectInfo.View
         public void SetCustomerName(Func<string> nameGetter) =>
             CustomerNameGetter = nameGetter;
 
+        public void ChangeCustomerName(string name) =>
+            View.CustomerNameTxt.SetText(name);
+
         public override void Show()
         {
             base.Show();
             View.PresenterNameTxt.SetText(PresenterNameGetter());
-            View.CustomerNameTxt.SetText(CustomerNameGetter());
+            ChangeCustomerName(CustomerNameGetter());
         }
     }
 }

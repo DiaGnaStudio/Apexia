@@ -47,7 +47,7 @@ public class ApplicationInitializer : MonoBehaviour
         AboutSystem.Initialize(CustomerInfoSystem.Show, ShowMenus, LoginSystem.SignOut, ExitSystem.Show);
         SidePanelSystem.Initialize(ChangeDayNight, ExitSystem.Show, ShowHome);
         ProfileMenuSystem.Initialize(null, null, LoginSystem.SignOut);
-        CustomerInfoSystem.Initialzie(LoginSystem.SignOut, GetOrders, BookmarkSystem.RemoveBookmark, BookmarkSystem.RemoveAll);
+        CustomerInfoSystem.Initialzie(LoginSystem.SignOut, GetOrders, BookmarkSystem.RemoveBookmark, BookmarkSystem.RemoveAll, LoginCustomer);
 
 
         void BookmarkUnit(UnitData data, bool isBookmarked)
@@ -84,6 +84,11 @@ public class ApplicationInitializer : MonoBehaviour
 
         OrderInfo[] GetOrders() =>
             BookmarkSystem.GetAll().Select(info => new OrderInfo(info.Id, info.Name, info.Type, info.Floor, info.Price, info.Area)).ToArray(); ;
+
+        void LoginCustomer(ClientInfo customer)
+        {
+            ProjectInfoSystem.ChangeCustomerName(customer.FullName);
+        }
 
 
         void ChangeDayNight(float value)

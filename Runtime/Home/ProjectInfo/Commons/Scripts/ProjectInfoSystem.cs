@@ -19,6 +19,9 @@ namespace ProjectInfo
         public static void SetCustomer(Func<string> customerName) =>
             view.SetCustomerName(customerName);
 
+        public static void ChangeCustomerName(string name) =>
+            view.ChangeCustomerName(name);
+
         public static void Show() =>
             view.Show();
 

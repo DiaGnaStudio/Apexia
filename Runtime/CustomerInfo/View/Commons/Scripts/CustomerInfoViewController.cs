@@ -60,6 +60,7 @@ namespace CustomerInfo.View
         {
             View.SignInPanel.Hide();
             View.ProfilePanel.Show();
+            IsShowing = true;
         }
 
         public void ShowSignUp()
@@ -67,12 +68,14 @@ namespace CustomerInfo.View
             View.ProfilePanel.Hide();
             View.SignInPanel.ClearInput();
             View.SignInPanel.Show();
+            IsShowing = true;
         }
 
         public override void Hide()
         {
             View.ProfilePanel.Hide();
             View.SignInPanel.Hide();
+            IsShowing = false;
         }
     }
 }

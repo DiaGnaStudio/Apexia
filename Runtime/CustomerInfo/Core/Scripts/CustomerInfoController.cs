@@ -15,27 +15,29 @@ namespace CustomerInfo.Core
         private readonly OrderSender senderAPI = new(null, null);
 
         private Action OnSignOut;
-        private readonly Action OnSignIn;
+        private Action<ClientInfo> OnSignIn;
 
         private Func<OrderInfo[]> GetUnits;
         private Action<int> OnDeleteOrder;
         private Action OnDeleteAllOrders;
 
-        public CustomerInfoController(Action<bool> onInputChange, Action onSignIn)
+        public CustomerInfoController(Action<bool> onInputChange)
         {
             inputControoler = new(onInputChange);
-            OnSignIn = onSignIn;
         }
 
-        public void SetSignOutAction(Action signOut)
+        public void SetSignAction(Action signOut, Action<ClientInfo> signIn)
         {
             OnSignOut = signOut;
+            OnSignIn = signIn;
         }
+
+
 
         public void SignInAsGuest()
         {
             profileStorage.Add(ClientInfo.Guest);
-            OnSignIn.Invoke();
+            OnSignIn.Invoke(ClientInfo.Guest);
         }
 
         public void SignIn()
@@ -45,7 +47,7 @@ namespace CustomerInfo.Core
             void Complete(ClientInfo info)
             {
                 profileStorage.Add(info);
-                OnSignIn.Invoke();
+                OnSignIn.Invoke(info);
             }
         }
 

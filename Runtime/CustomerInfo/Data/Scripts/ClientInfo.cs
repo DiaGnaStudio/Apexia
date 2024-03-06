@@ -18,7 +18,7 @@ namespace CustomerInfo.Data
         public string Phone { get; set; }
 
         public static ClientInfo Guest =>
-            new(-1, "New Customer", string.Empty, string.Empty, string.Empty);
+            new(-1, "-", string.Empty, string.Empty, string.Empty);
 
         public string FullName =>
             string.Format("{0} {1}", FirstName, LastName);

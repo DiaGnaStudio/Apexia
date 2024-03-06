@@ -14,16 +14,22 @@ namespace CustomerInfo
         static CustomerInfoSystem()
         {
             view = UScreenRepo.Get<CustomerInfoViewController>();
-            logic = new(view.SetLoginIntractable, view.ShowProfile);
+            logic = new(view.SetLoginIntractable);
 
             view.SetChangeInfo(logic.CheckFirstName, logic.CheckLastName, logic.CheckPhone, logic.CheckEmail);
             view.Initialize(logic.SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
         }
 
-        public static void Initialzie(Action signOut, Func<OrderInfo[]> getOrders, Action<int> deleteBookmark, Action clearAll)
+        public static void Initialzie(Action signOut, Func<OrderInfo[]> getOrders, Action<int> deleteBookmark, Action clearAll, Action<ClientInfo> onLoginCustomer)
         {
-            logic.SetSignOutAction(signOut);
+            logic.SetSignAction(signOut, SignIn);
             logic.InitializeOrder(getOrders, deleteBookmark, clearAll);
+
+            void SignIn(ClientInfo customer)
+            {
+                onLoginCustomer.Invoke(customer);
+                view.ShowProfile();
+            }
         }
 
         public static void Show()
