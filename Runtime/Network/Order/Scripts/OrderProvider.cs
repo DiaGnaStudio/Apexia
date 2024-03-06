@@ -19,6 +19,7 @@ namespace Order.Provider
                 units_id = $"[{string.Join(", ", unitIds)}]",
                 client_id = clientId
             });
+            Debug.Log(reqData.BodyJson);
             var req = reqData.CreateRequest();
             req.SetCallback(responseCallback);
             req.Send();
