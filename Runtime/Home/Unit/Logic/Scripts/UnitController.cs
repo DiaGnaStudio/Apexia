@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using Unit.Data;
 using Unit.Logic.Assets;
 using Unit.Logic.Components;
@@ -8,7 +9,6 @@ using Object = UnityEngine.Object;
 
 namespace Unit.Logic
 {
-
     public class UnitController
     {
         private readonly UnitLoader loaderAPI;
@@ -17,12 +17,14 @@ namespace Unit.Logic
         private readonly UnitTypeRepo unitTypeStorage;
         private readonly UnitMapRepo unitMapStorage;
 
+        private readonly Storage<int, UnitData> unitStorage = new();
+
         private readonly Building building;
         private readonly FilterHandler filter;
 
         private readonly UnitCamera camera;
 
-        private readonly BookmarkHandler bookmark;
+        private BookmarkHandler bookmark;
 
         public UnitController()
         {
@@ -39,30 +41,20 @@ namespace Unit.Logic
 
             void CompleteLoad((int id, UnitData data)[] infos)
             {
-                building.LoadUnits(Get);
-
                 foreach (var (id, data) in infos)
                 {
                     if (data.State == State.Saleable)
                     {
                         paymentLoaderAPI.Load(id, LoadInstallment);
 
-                        void LoadInstallment(UnitInstallmentsData installmentsData)
-                        {
+                        void LoadInstallment(UnitInstallmentsData installmentsData) =>
                             data.SetPrice(installmentsData.UnitInfo.Price);
-                        }
                     }
+
+                    unitStorage.Add((id, data));
                 }
 
-                UnitData Get(int id)
-                {
-                    foreach (var info in infos)
-                        if (info.id == id)
-                            return info.data;
-
-                    Debug.Log($"The unit is not loaded! (Unit id = {id})");
-                    return UnitData.DEFAULT;
-                }
+                building.LoadUnits(unitStorage.Get);
             }
         }
 
@@ -98,13 +90,13 @@ namespace Unit.Logic
         public void Show() =>
             camera.SetPoints();
 
-        public void SetBookmark(int unitId, bool isBookmark) =>
-            bookmark.SetBookmark(unitId, isBookmark);
-
         public bool IsBookmarkEnable() =>
             bookmark.IsEnable();
 
-        public bool IsBookmarked(int unitId) =>
-            bookmark.IsBookmarked(unitId);
+        internal void InitializeBookmark(Func<int> getClientId) => 
+            bookmark = new(getClientId);
+
+        public void SetActiveBuilding(bool value) => 
+            building.gameObject.SetActive(value);
     }
 }

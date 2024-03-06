@@ -1,8 +1,8 @@
 using UnityEngine;
 
-namespace Bookmark.Provider.Test
+namespace Order.Provider.Test
 {
-    public class BookmarkProviderRuntimeTest : MonoBehaviour
+    public class OrderProviderRuntimeTest : MonoBehaviour
     {
         [SerializeField] private int idclientId;
         [SerializeField] private int[] unitIds;
@@ -10,7 +10,7 @@ namespace Bookmark.Provider.Test
         [ContextMenu("Bookmark")]
         private void Bookmark()
         {
-            BookmarkService.Bookmark(unitIds, idclientId, Load, Error);
+            OrderService.Send(unitIds, idclientId, Load, Error);
 
             void Load() =>
                 Debug.Log("");

@@ -28,8 +28,14 @@ namespace CustomerInfo.View.Profile
         {
             userInfo.SetSignOutAction(signOut);
             shareButton.SetAction(share);
-            clearAllButton.SetAction(clearAll);
+            clearAllButton.SetAction(ClearAll);
             UnitInfoSlot.SetDeleteAction(deleteBookmark);
+
+            void ClearAll()
+            {
+                clearAll.Invoke();
+                creator.DisableAll();
+            }
         }
 
         public override void Show()

@@ -5,22 +5,24 @@ namespace ProjectInfo.View
 {
     public class ProjectInfoViewController : UScreenGeneric<ProjectInfoViewController, ProjectInfoView>
     {
-        Func<string> PresenterNameGetter;
+        private Func<string> PresenterNameGetter;
+        private Func<string> CustomerNameGetter;
 
         public override void InitializeState() { }
 
         public override void InitializeView() { }
 
-        public void SetPresenterName(Func<string> name) =>
-            PresenterNameGetter = name;
+        public void SetPresenterName(Func<string> nameGetter) =>
+            PresenterNameGetter = nameGetter;
 
-        public void SetCustomerName(string name) =>
-            View.CustomerNameTxt.SetText(name);
+        public void SetCustomerName(Func<string> nameGetter) =>
+            CustomerNameGetter = nameGetter;
 
         public override void Show()
         {
             base.Show();
             View.PresenterNameTxt.SetText(PresenterNameGetter());
+            View.CustomerNameTxt.SetText(CustomerNameGetter());
         }
     }
 }

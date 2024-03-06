@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: unitCode
       value: 12
       objectReference: {fileID: 0}
+    - target: {fileID: 2564484247161104220, guid: 86d8adef4b4cbca4aa4b3241e439441f, type: 3}
+      propertyPath: _collider
+      value: 
+      objectReference: {fileID: 2852971586658420767}
     - target: {fileID: 7420327752322676492, guid: 86d8adef4b4cbca4aa4b3241e439441f, type: 3}
       propertyPath: m_Mesh
       value: 

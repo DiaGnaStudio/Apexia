@@ -16,7 +16,7 @@ namespace ProjectInfo.Test
         private void Show()
         {
             ProjectInfoSystem.SetPresenter(() => presenter);
-            ProjectInfoSystem.SetCustomer(customer);
+            ProjectInfoSystem.SetCustomer(() => customer);
             ProjectInfoSystem.Show();
         }
     }

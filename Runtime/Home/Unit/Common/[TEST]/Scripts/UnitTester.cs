@@ -1,12 +1,26 @@
+using Unit.Data;
 using UnityEngine;
 
 namespace Unit.Test
 {
     public class UnitTester : MonoBehaviour
     {
+        public int clientId;
+
         private void Awake()
         {
+            UnitSystem.Initialize(BookmarkUnit, GetClientId, (data) => false);
             Show();
+
+            void BookmarkUnit(UnitData data, bool isBookmarked)
+            {
+                if (isBookmarked)
+                    Debug.Log($"Bookmark unit -> {data}");
+                else
+                    Debug.Log($"Unbookmark unit -> {data}");
+            }
+
+            int GetClientId() => clientId;
         }
 
         [ContextMenu("Show")]

@@ -10,6 +10,6 @@ namespace CustomerInfo.Core.Module
             this.client = client;
 
         public ClientInfo Get() =>
-            this.client;
+            client;
     }
 }

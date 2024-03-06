@@ -4,17 +4,21 @@ namespace Unit.Logic.Module
 {
     internal class BookmarkStorage
     {
-        private readonly Dictionary<int, bool> catched = new();
+        private readonly List<int> catched = new();
 
-        public void Add(int unitId, bool value)
+        public void Add(int unitId)
         {
-            if (catched.ContainsKey(unitId))
-                catched[unitId] = value;
-            else
-                catched.Add(unitId, value);
+            if (catched.Contains(unitId)) return;
+            catched.Add(unitId);
         }
 
-        public bool Get(int unitId) =>
-            catched.TryGetValue(unitId, out bool result) && result;
+        public void Remove(int unitId)
+        {
+            if (!catched.Contains(unitId)) return;
+            catched.Remove(unitId);
+        }
+
+        public bool IsBookmarked(int unitId) =>
+            catched.Contains(unitId);
     }
 }

@@ -1,4 +1,5 @@
 using CustomerInfo.Core;
+using CustomerInfo.Data;
 using CustomerInfo.View;
 using System;
 using UScreens;
@@ -19,14 +20,15 @@ namespace CustomerInfo
             view.Initialize(logic.SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
         }
 
-        public static void Initialzie(Action signOut)
+        public static void Initialzie(Action signOut, Func<OrderInfo[]> getOrders, Action<int> deleteBookmark, Action clearAll)
         {
             logic.SetSignOutAction(signOut);
+            logic.InitializeOrder(getOrders, deleteBookmark, clearAll);
         }
 
         public static void Show()
         {
-            if (logic.HasSignIn)
+            if (logic.GetClient(true) != null)
                 view.ShowProfile();
             else
                 view.ShowSignUp();
@@ -42,5 +44,8 @@ namespace CustomerInfo
             else
                 Show();
         }
+
+        public static ClientInfo GetClientInfo(bool canBeNull = true) =>
+            logic.GetClient(canBeNull);
     }
 }

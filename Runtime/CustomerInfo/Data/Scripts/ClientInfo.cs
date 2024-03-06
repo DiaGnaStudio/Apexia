@@ -17,6 +17,10 @@ namespace CustomerInfo.Data
         public string Email { get; set; }
         public string Phone { get; set; }
 
-        public static ClientInfo Guest => new(-1, "New User", string.Empty, string.Empty, string.Empty);
+        public static ClientInfo Guest =>
+            new(-1, "New Customer", string.Empty, string.Empty, string.Empty);
+
+        public string FullName =>
+            string.Format("{0} {1}", FirstName, LastName);
     }
 }

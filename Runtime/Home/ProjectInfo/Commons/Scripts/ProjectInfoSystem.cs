@@ -16,10 +16,10 @@ namespace ProjectInfo
         public static void SetPresenter(Func<string> presenterName) =>
             view.SetPresenterName(presenterName);
 
-        public static void SetCustomer(string customerName) =>
+        public static void SetCustomer(Func<string> customerName) =>
             view.SetCustomerName(customerName);
 
-        public static void Show() => 
+        public static void Show() =>
             view.Show();
 
         public static void Hide() =>

@@ -1,6 +1,7 @@
 using CustomerInfo.Core.Module;
 using CustomerInfo.Data;
 using System;
+using System.Linq;
 using UnityEngine;
 
 namespace CustomerInfo.Core
@@ -11,11 +12,14 @@ namespace CustomerInfo.Core
         private readonly ProfileStorage profileStorage = new();
 
         private readonly ClientLoader loaderAPI = new();
-
-        public bool HasSignIn => profileStorage.Get() != null;
+        private readonly OrderSender senderAPI = new(null, null);
 
         private Action OnSignOut;
         private readonly Action OnSignIn;
+
+        private Func<OrderInfo[]> GetUnits;
+        private Action<int> OnDeleteOrder;
+        private Action OnDeleteAllOrders;
 
         public CustomerInfoController(Action<bool> onInputChange, Action onSignIn)
         {
@@ -70,27 +74,33 @@ namespace CustomerInfo.Core
 
         public (Sprite avatar, string username) GetUser()
         {
-            var client = profileStorage.Get();
-            var username = string.Format("{0} {1}", client.FirstName, client.LastName);
-            return (null, username);
+            return (null, GetClient(false).FullName);
         }
 
-        public void Share()
+        #region Order
+
+        public void InitializeOrder(Func<OrderInfo[]> getOrders, Action<int> deleteOrder, Action clearAll)
         {
-            // call api
+            GetUnits = getOrders;
+            OnDeleteOrder = deleteOrder;
+            OnDeleteAllOrders = clearAll;
         }
 
-        public void ClearAll()
-        {
+        public void ClearAll() =>
+            OnDeleteAllOrders.Invoke();
 
-        }
-
-        public void DeleteOrder(OrderInfo info)
-        {
-
-        }
+        public void DeleteOrder(OrderInfo info) =>
+            OnDeleteOrder.Invoke(info.Id);
 
         public OrderInfo[] GetAllOrders() =>
-            new OrderInfo[0];
+            GetUnits();
+
+        public ClientInfo GetClient(bool canBeNull = true) =>
+            canBeNull ? profileStorage.Get() : profileStorage.Get() ?? ClientInfo.Guest;
+
+        public void Share() =>
+            senderAPI.Send(GetUnits().Select(unit => unit.Id).ToArray(), GetClient(false).Id);
+
+        #endregion
     }
 }

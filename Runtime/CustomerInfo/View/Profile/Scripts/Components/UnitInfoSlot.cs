@@ -26,8 +26,16 @@ namespace CustomerInfo.View.Profile.Components
             unitNameText.SetText(info.UnitName);
             unitTypeText.SetText(info.UnitType);
             floorText.SetText(ToOrdinal(info.Floor));
-            priceText.SetText(string.Format("{0} OMR", info.Price.ToString("N0")));
-            priceText.SetText(string.Format("{0} sqft", info.Area));
+            
+            priceText.gameObject.SetActive(true);
+            if (int.TryParse(info.Price, out int price))
+                priceText.SetText(string.Format("{0} OMR", price.ToString("N0")));
+            else if (info.Price == string.Empty)
+                priceText.gameObject.SetActive(false);
+            else
+                priceText.SetText(info.Price);
+
+            areaText.SetText(string.Format("{0} sqft", info.Area));
 
             string ToOrdinal(int number)
             {
@@ -57,7 +65,7 @@ namespace CustomerInfo.View.Profile.Components
         private void Delete()
         {
             OnDelete.Invoke(_info);
-            DestroyImmediate(gameObject);
+            gameObject.SetActive(false);
         }
 
         public static void SetDeleteAction(Action<OrderInfo> action) =>

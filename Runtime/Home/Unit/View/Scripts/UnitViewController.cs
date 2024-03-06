@@ -18,6 +18,7 @@ namespace Unit.View
         public override void InitializeView()
         {
             View.FilterPanel.Initialize();
+            View.FilterPanel.Hide();
         }
 
         public void InitializeFilter(Action<UnitFilter> onUpdate) =>
@@ -42,8 +43,11 @@ namespace Unit.View
             }
         }
 
-        public void InitializeBookmark(Action<int, bool> onClick, Func<bool> isIntractable, Func<int, bool> isBookmarked) => 
-            BookmarkButton.Initialize(onClick, isIntractable, isBookmarked);
+        public void InitializeBookmark(Action<UnitData, bool> onClick, Func<bool> isIntractable, Func<UnitData, bool> isBookmarked)
+        {
+            BookmarkButton.Initialize(isIntractable);
+            UnitInfoPanel.SetBookmarkAction(isBookmarked, onClick);
+        }
 
         public void Show(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {

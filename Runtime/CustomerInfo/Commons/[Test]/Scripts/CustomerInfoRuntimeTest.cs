@@ -9,7 +9,7 @@ namespace CustomerInfo.View.Test
 
         private void Awake()
         {
-            CustomerInfoSystem.Initialzie(SignOut);
+            CustomerInfoSystem.Initialzie(SignOut, null, null, null);
 
             void SignOut() => Debug.Log("Click on sign out");
         }

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b2f43aac2e4fbd4ab5f736490cd2d55, type: 3}
   m_Name: UnitTypeCard_2 bedroom + maid
   m_EditorClassIdentifier: 
-  <Name>k__BackingField: 
+  <Name>k__BackingField: 2 Bedrooms + Maid
   <Type>k__BackingField: 4
   <Gallery>k__BackingField: {fileID: 0}
   <DollHousePrefab>k__BackingField: {fileID: 0}

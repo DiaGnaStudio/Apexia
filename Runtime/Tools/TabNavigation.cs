@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
-namespace Login.View.Components
+namespace Tools
 {
     internal class TabNavigation : MonoBehaviour
     {

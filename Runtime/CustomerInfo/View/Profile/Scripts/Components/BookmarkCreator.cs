@@ -15,5 +15,10 @@ namespace CustomerInfo.View.Profile.Components
             foreach (var info in infos)
                 itemPool.GetActive.SetData(info);
         }
+
+        public void DisableAll()
+        {
+            itemPool.DeactiveAllInstance();
+        }
     }
 }

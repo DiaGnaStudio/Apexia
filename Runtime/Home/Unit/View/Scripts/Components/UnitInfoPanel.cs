@@ -33,6 +33,15 @@ namespace Unit.View.Components
 
         private bool isInitialized = false;
 
+        private static Func<UnitData, bool> CheckBookmarked;
+        private static Action<UnitData, bool> OnBookmark;
+
+        public static void SetBookmarkAction(Func<UnitData, bool> checkBookmarked,Action<UnitData, bool> onBookmark)
+        {
+            CheckBookmarked = checkBookmarked;
+            OnBookmark = onBookmark;
+        }
+
         public void SetData(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {
             nameText.SetText(data.Name);
@@ -45,12 +54,15 @@ namespace Unit.View.Components
             currentInstallmentsData = installmentsData;
             currentMap = map;
 
-            bookmark.SetData(data.Id);
+            bookmark.SetData(CheckBookmarked(data), ClickOnBookmark);
 
             if (data.State == State.Negotiable)
                 installmentsBtn.gameObject.SetActive(false);
             else
                 installmentsBtn.gameObject.SetActive(true);
+
+            void ClickOnBookmark(bool value) => 
+                OnBookmark.Invoke(data, value);
         }
 
         public void SetActions(InfoPanelActions actions)
