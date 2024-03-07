@@ -77,5 +77,8 @@ namespace CustomerInfo.View
             View.SignInPanel.Hide();
             IsShowing = false;
         }
+
+        public void ClearBookmarks() =>
+            View.ProfilePanel.ClearAll();
     }
 }

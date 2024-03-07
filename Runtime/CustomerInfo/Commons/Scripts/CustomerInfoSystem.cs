@@ -21,7 +21,11 @@ namespace CustomerInfo
             view.Initialize(SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
         }
 
-        public static void Initialzie(Action signOut, Func<OrderInfo[]> getOrders, Action<int> deleteBookmark, Action clearAll, Action<ClientInfo> onLoginCustomer)
+        public static void Initialzie(Action signOut,
+                                      Func<OrderInfo[]> getOrders,
+                                      Action<int> deleteBookmark,
+                                      Action clearAll,
+                                      Action<ClientInfo> onLoginCustomer)
         {
             logic.SetSignAction(signOut, SignIn);
             logic.InitializeOrder(getOrders, deleteBookmark, clearAll, ShareSuccessfully, ShareFailure);
@@ -35,6 +39,8 @@ namespace CustomerInfo
             void ShareSuccessfully()
             {
                 Debug.Log("ShareSuccessfully");
+                clearAll.Invoke();
+                view.ClearBookmarks();
             }
 
             void ShareFailure()

@@ -88,13 +88,7 @@ namespace CustomerInfo.Core
             GetUnits = getOrders;
             OnDeleteOrder = deleteOrder;
             OnDeleteAllOrders = clearAll;
-            senderAPI.Initialize(SendSuccessfully, onFailureSend);
-
-            void SendSuccessfully()
-            {
-                onSuccessSend.Invoke();
-                ClearAll();
-            }
+            senderAPI.Initialize(onSuccessSend, onFailureSend);
         }
 
         public void ClearAll() =>

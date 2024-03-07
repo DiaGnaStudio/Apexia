@@ -14,13 +14,26 @@ namespace Order.Provider
         public void Send(int unitId, int clientId, Action<UnityWebRequest> responseCallback)
         {
             var reqData = sendAPI.CreateRequestData();
+#if UNITY_EDITOR
             reqData.BodyJson = JsonConvert.SerializeObject(new
             {
                 selected_unit = unitId,
                 client = clientId,
                 status = "Bookmarked",
                 expiry_date = DateTime.UtcNow.Date,
+                send_email = false
             });
+#else
+            reqData.BodyJson = JsonConvert.SerializeObject(new
+            {
+                selected_unit = unitId,
+                client = clientId,
+                status = "Bookmarked",
+                expiry_date = DateTime.UtcNow.Date,
+                send_email = true
+            });
+#endif
+
             Debug.Log(reqData.BodyJson);
             var req = reqData.CreateRequest();
             req.SetCallback(responseCallback);

@@ -17,6 +17,7 @@ namespace CustomerInfo.View.Profile
 
         private Func<OrderInfo[]> DataGetter;
         private Func<(Sprite avatar, string username)> UserDataGetter;
+        private Action OnClearAll;
 
         public void SetCustomerData(Func<(Sprite avatar, string username)> getter) =>
             UserDataGetter = getter;
@@ -31,11 +32,7 @@ namespace CustomerInfo.View.Profile
             clearAllButton.SetAction(ClearAll);
             UnitInfoSlot.SetDeleteAction(deleteBookmark);
 
-            void ClearAll()
-            {
-                clearAll.Invoke();
-                creator.DisableAll();
-            }
+            OnClearAll = clearAll;
         }
 
         public override void Show()
@@ -50,5 +47,11 @@ namespace CustomerInfo.View.Profile
 
         public void SetCloseAction(Action action) =>
             closeBtn.onClick.AddListener(action.Invoke);
+
+        public void ClearAll()
+        {
+            OnClearAll.Invoke();
+            creator.DisableAll();
+        }
     }
 }
