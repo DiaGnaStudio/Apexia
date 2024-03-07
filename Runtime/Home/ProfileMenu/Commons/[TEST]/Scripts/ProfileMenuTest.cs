@@ -7,6 +7,7 @@ namespace ProfileMenu.Test
         private void Awake()
         {
             ProfileMenuSystem.Initialize(Profile, Setting, SignOut);
+            ProfileMenuSystem.Load();
             Show();
 
             void Profile() => Debug.Log("Click on Profile.");

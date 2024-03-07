@@ -1,3 +1,4 @@
+using ProfileMenu.Core;
 using ProfileMenu.View;
 using System;
 using UnityEngine;
@@ -7,21 +8,29 @@ namespace ProfileMenu
 {
     public static class ProfileMenuSystem
     {
+        private static readonly ProfileMenuController logic;
         private static readonly ProfileMenuViewController view;
 
         static ProfileMenuSystem()
         {
             view = UScreenRepo.Get<ProfileMenuViewController>();
+            logic = new(view.SetData);
         }
 
-        public static void SetData(Sprite avatar, string name) =>
-            view.SetData(avatar, name);
+        public static void Load() =>
+            logic.Load();
 
         public static void Initialize(Action profileAction, Action settingAction, Action signOutAction)
         {
             view.SetProfileAction(profileAction);
             view.SetSettingAction(settingAction);
-            view.SetSignOutAction(signOutAction);
+            view.SetSignOutAction(SignOut);
+
+            void SignOut()
+            {
+                signOutAction.Invoke();
+                logic.SignOut();
+            }
         }
 
         public static void Show(Transform parent = null)

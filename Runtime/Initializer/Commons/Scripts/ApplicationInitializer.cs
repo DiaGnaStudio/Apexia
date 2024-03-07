@@ -17,19 +17,13 @@ public class ApplicationInitializer : MonoBehaviour
 {
     private void Awake()
     {
-        LoginSystem.Initialize(SetInfo, Initialize, SignOut, ExitSystem.Show);
+        LoginSystem.Initialize(Initialize, SignOut, ExitSystem.Show);
 
         void SignOut()
         {
             LoginSystem.Show();
             AboutSystem.Hide();
             SidePanelSystem.Hide();
-        }
-
-        void SetInfo(string presenterName)
-        {
-
-            ProfileMenuSystem.SetData(null, presenterName);
         }
     }
 
@@ -40,6 +34,8 @@ public class ApplicationInitializer : MonoBehaviour
 
     private void Initialize()
     {
+        ProfileMenuSystem.Load();
+
         UnitSystem.Initialize(BookmarkUnit, GetClientId, IsBookmarked);
 
         ProjectInfoSystem.SetPresenter(LoginSystem.GetPresenter);

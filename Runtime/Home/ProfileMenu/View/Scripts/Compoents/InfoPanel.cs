@@ -16,7 +16,8 @@ namespace ProfileMenu.View.Components
 
         public void SetData(Sprite avatar, string name)
         {
-            avatarImage.sprite = avatar;
+            if (avatar != null)
+                avatarImage.sprite = avatar;
             nameText.SetText(name);
         }
 

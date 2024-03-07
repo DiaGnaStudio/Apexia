@@ -30,9 +30,9 @@ namespace Login
             }
         }
 
-        public static void Initialize(Action<string> onLoadPresenter, Action onLogin, Action onSignOut, Action onClose)
+        public static void Initialize(Action onLogin, Action onSignOut, Action onClose)
         {
-            logic.SetLoginAction(onLoadPresenter, onLogin, onSignOut);
+            logic.SetLoginAction(onLogin, onSignOut);
             view.SetCloseAction(onClose);
         }
 

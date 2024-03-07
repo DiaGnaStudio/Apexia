@@ -18,7 +18,7 @@ namespace CustomerInfo
             logic = new(view.SetLoginIntractable);
 
             view.SetChangeInfo(logic.CheckFirstName, logic.CheckLastName, logic.CheckPhone, logic.CheckEmail);
-            view.Initialize(logic.SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
+            view.Initialize(SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
         }
 
         public static void Initialzie(Action signOut, Func<OrderInfo[]> getOrders, Action<int> deleteBookmark, Action clearAll, Action<ClientInfo> onLoginCustomer)
@@ -64,5 +64,8 @@ namespace CustomerInfo
 
         public static ClientInfo GetClientInfo(bool canBeNull = true) =>
             logic.GetClient(canBeNull);
+
+        public static void SignOut() =>
+            logic.SignOut();
     }
 }

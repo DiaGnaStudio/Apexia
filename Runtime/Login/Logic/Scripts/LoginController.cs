@@ -14,7 +14,6 @@ namespace Login.Core
 
         private string presenterName;
 
-        private Action<string> OnLoadPresenter;
         private Action OnLogin;
         private Action OnSignOut;
 
@@ -26,9 +25,8 @@ namespace Login.Core
             onChanged.Invoke(false);
         }
 
-        public void SetLoginAction(Action<string> onLoadInfo, Action onLogin,Action onSignOut)
+        public void SetLoginAction(Action onLogin,Action onSignOut)
         {
-            OnLoadPresenter = onLoadInfo;
             OnLogin = onLogin;
             OnSignOut = onSignOut;
         }
@@ -42,8 +40,6 @@ namespace Login.Core
                 void Accept(string presenterName)
                 {
                     OnAccept.Invoke();
-                    OnLoadPresenter.Invoke(presenterName);
-
                     OnLogin.Invoke();
 
                     this.presenterName = presenterName;
