@@ -12,7 +12,7 @@ namespace CustomerInfo.Core
         private readonly ProfileStorage profileStorage = new();
 
         private readonly ClientLoader loaderAPI = new();
-        private readonly OrderSender senderAPI = new(null, null);
+        private readonly OrderSender senderAPI = new();
 
         private Action OnSignOut;
         private Action<ClientInfo> OnSignIn;
@@ -26,13 +26,13 @@ namespace CustomerInfo.Core
             inputControoler = new(onInputChange);
         }
 
+        #region Sign in/out
+
         public void SetSignAction(Action signOut, Action<ClientInfo> signIn)
         {
             OnSignOut = signOut;
             OnSignIn = signIn;
         }
-
-
 
         public void SignInAsGuest()
         {
@@ -57,6 +57,13 @@ namespace CustomerInfo.Core
             OnSignOut.Invoke();
         }
 
+        public (Sprite avatar, string username) GetUser()
+        {
+            return (null, GetClient(false).FullName);
+        }
+
+        #endregion
+
         #region Input Controlling
 
         public void CheckFirstName(string value) =>
@@ -74,18 +81,20 @@ namespace CustomerInfo.Core
 
         #endregion
 
-        public (Sprite avatar, string username) GetUser()
-        {
-            return (null, GetClient(false).FullName);
-        }
-
         #region Order
 
-        public void InitializeOrder(Func<OrderInfo[]> getOrders, Action<int> deleteOrder, Action clearAll)
+        public void InitializeOrder(Func<OrderInfo[]> getOrders, Action<int> deleteOrder, Action clearAll, Action onSuccessSend, Action onFailureSend)
         {
             GetUnits = getOrders;
             OnDeleteOrder = deleteOrder;
             OnDeleteAllOrders = clearAll;
+            senderAPI.Initialize(SendSuccessfully, onFailureSend);
+
+            void SendSuccessfully()
+            {
+                onSuccessSend.Invoke();
+                ClearAll();
+            }
         }
 
         public void ClearAll() =>

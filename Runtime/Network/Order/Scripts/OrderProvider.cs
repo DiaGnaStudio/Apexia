@@ -11,13 +11,15 @@ namespace Order.Provider
     {
         [SerializeField] private HTTPRequestCard sendAPI;
 
-        public void Send(int[] unitIds, int clientId, Action<UnityWebRequest> responseCallback)
+        public void Send(int unitId, int clientId, Action<UnityWebRequest> responseCallback)
         {
             var reqData = sendAPI.CreateRequestData();
             reqData.BodyJson = JsonConvert.SerializeObject(new
             {
-                units_id = $"[{string.Join(", ", unitIds)}]",
-                client_id = clientId
+                selected_unit = unitId,
+                client = clientId,
+                status = "Bookmarked",
+                expiry_date = DateTime.UtcNow.Date,
             });
             Debug.Log(reqData.BodyJson);
             var req = reqData.CreateRequest();

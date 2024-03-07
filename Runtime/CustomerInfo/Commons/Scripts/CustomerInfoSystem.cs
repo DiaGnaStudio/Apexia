@@ -2,6 +2,7 @@ using CustomerInfo.Core;
 using CustomerInfo.Data;
 using CustomerInfo.View;
 using System;
+using UnityEngine;
 using UScreens;
 
 namespace CustomerInfo
@@ -23,12 +24,22 @@ namespace CustomerInfo
         public static void Initialzie(Action signOut, Func<OrderInfo[]> getOrders, Action<int> deleteBookmark, Action clearAll, Action<ClientInfo> onLoginCustomer)
         {
             logic.SetSignAction(signOut, SignIn);
-            logic.InitializeOrder(getOrders, deleteBookmark, clearAll);
+            logic.InitializeOrder(getOrders, deleteBookmark, clearAll, ShareSuccessfully, ShareFailure);
 
             void SignIn(ClientInfo customer)
             {
                 onLoginCustomer.Invoke(customer);
                 view.ShowProfile();
+            }
+
+            void ShareSuccessfully()
+            {
+                Debug.Log("ShareSuccessfully");
+            }
+
+            void ShareFailure()
+            {
+                Debug.Log("ShareFailure");
             }
         }
 

@@ -10,9 +10,9 @@ namespace Order.Provider
         static OrderService() =>
             provider = OrderProvider.Load;
 
-        public static void Send(int[] unitIds, int clientId, Action OnLoad, Action<string> onError)
+        public static void Send(int unitId, int clientId, Action OnSuccess, Action<string> onError)
         {
-            provider.Send(unitIds, clientId, LoginCallback);
+            provider.Send(unitId, clientId, LoginCallback);
 
             void LoginCallback(UnityWebRequest callbackReq)
             {
@@ -22,7 +22,7 @@ namespace Order.Provider
                     return;
                 }
 
-                OnLoad.Invoke();
+                OnSuccess.Invoke();
             }
         }
     }

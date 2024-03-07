@@ -6,26 +6,41 @@ namespace CustomerInfo.Core.Module
 {
     internal class OrderSender
     {
-        private readonly Action OnSuccess;
-        private readonly Action OnFailure;
+        private Action OnSuccess;
+        private Action OnFailure;
 
-        public OrderSender(Action onSuccess, Action onFailure)
+        private int sendedIndex = 0;
+
+        public void Initialize(Action onSuccess, Action onFailure)
         {
             OnSuccess = onSuccess;
             OnFailure = onFailure;
         }
 
-        public void Send(int[] unitId, int clientId)
+        public void Send(int[] unitIds, int clientId)
         {
-            OrderService.Send(unitId, clientId, Get, Error);
+            sendedIndex = 0;
+            foreach (var id in unitIds)
+                Send(id, clientId, SendSuccessfuly);
 
-            void Get() =>
-                OnSuccess.Invoke();
-
-            void Error(string message)
+            void Send(int unitId, int clientId, Action onSuccess)
             {
-                OnFailure.Invoke();
-                Debug.LogError(message);
+                OrderService.Send(unitId, clientId, Get, Error);
+
+                void Get() =>
+                    onSuccess.Invoke();
+
+                void Error(string message)
+                {
+                    OnFailure.Invoke();
+                    Debug.LogError(message);
+                }
+            }
+
+            void SendSuccessfuly()
+            {
+                if (++sendedIndex == unitIds.Length)
+                    OnSuccess.Invoke();
             }
         }
     }
