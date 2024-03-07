@@ -14,7 +14,8 @@ namespace ProfileMenu.Core.Modules
 
             void Get(User user)
             {
-                SpriteDownloader.DownloadSprite(BASE_URL + user.avatar.url, onLoadAvatar);
+                if (user.avatar != null)
+                    SpriteDownloader.DownloadSprite(BASE_URL + user.avatar.url, onLoadAvatar);
                 onLoadName.Invoke(user.fullname);
             }
 
