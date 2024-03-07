@@ -520,6 +520,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3666058425431782578}
     m_Modifications:
+    - target: {fileID: 3874273617300346028, guid: 14fbef3754a6390489c0ec26598d2c5e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 3874273617300346028, guid: 14fbef3754a6390489c0ec26598d2c5e, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6395657875101835971, guid: 14fbef3754a6390489c0ec26598d2c5e, type: 3}
       propertyPath: m_Name
       value: CustomerInfo-btn
@@ -755,10 +763,6 @@ PrefabInstance:
       value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 697818387079123466, guid: dc9537f2bcefe55478b6d832fc8214ac, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 697818387079123466, guid: dc9537f2bcefe55478b6d832fc8214ac, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
       objectReference: {fileID: 0}
@@ -863,6 +867,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3666058425431782578}
     m_Modifications:
+    - target: {fileID: 3671771272384370955, guid: 31bd48ac8dcbab346bebf2cdd380add2, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 3671771272384370955, guid: 31bd48ac8dcbab346bebf2cdd380add2, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6913341138534494052, guid: 31bd48ac8dcbab346bebf2cdd380add2, type: 3}
       propertyPath: m_Name
       value: Projects-btn
@@ -1104,10 +1116,6 @@ PrefabInstance:
     - target: {fileID: 4563998998642512935, guid: 202551b1710e1494f849584df7b8f0ae, type: 3}
       propertyPath: m_Pivot.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 4563998998642512935, guid: 202551b1710e1494f849584df7b8f0ae, type: 3}
-      propertyPath: m_RootOrder
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4563998998642512935, guid: 202551b1710e1494f849584df7b8f0ae, type: 3}
       propertyPath: m_AnchorMax.x

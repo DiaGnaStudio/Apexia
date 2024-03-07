@@ -13,6 +13,9 @@ namespace UWarning.View
         [SerializeField] private ButtonHandler buttonHandler;
         [SerializeField] private InfoHolder infoHolder;
 
+        [Header("Time")]
+        [SerializeField,Min(0)] private float delay = 5;
+
         private void Awake() => 
             buttonHandler?.SetHideAction(Hide);
 
@@ -24,6 +27,13 @@ namespace UWarning.View
 
             buttonHandler?.SetAcceptInfo(card.AccecptButton.isActive, card.AccecptButton.text, acceptAction);
             buttonHandler?.SetRejectInfo(card.RejectButton.isActive, card.RejectButton.text, rejectAction);
+        }
+
+        public override void Show()
+        {
+            base.Show();
+
+            Invoke(nameof(Hide), delay);
         }
     }
 }

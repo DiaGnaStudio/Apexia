@@ -616,8 +616,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Customer Info
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: af685151db91d9f4ba92f399ee7b387e, type: 2}
-  m_sharedMaterial: {fileID: -1879939588580746938, guid: af685151db91d9f4ba92f399ee7b387e, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+  m_sharedMaterial: {fileID: -8773203736211845433, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1232,14 +1232,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: LastName-Field
       objectReference: {fileID: 0}
-    - target: {fileID: 7741122979875943048, guid: 41fef829a5ca3da4eb4eca1beed8af39, type: 3}
-      propertyPath: m_text
-      value: Last Name
-      objectReference: {fileID: 0}
-    - target: {fileID: 9153701732945012963, guid: 41fef829a5ca3da4eb4eca1beed8af39, type: 3}
-      propertyPath: m_PreserveAspect
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1379,10 +1371,6 @@ PrefabInstance:
     - target: {fileID: 5527981657952345246, guid: 41fef829a5ca3da4eb4eca1beed8af39, type: 3}
       propertyPath: m_Name
       value: FirstName-Field
-      objectReference: {fileID: 0}
-    - target: {fileID: 7741122979875943048, guid: 41fef829a5ca3da4eb4eca1beed8af39, type: 3}
-      propertyPath: m_text
-      value: First Name
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

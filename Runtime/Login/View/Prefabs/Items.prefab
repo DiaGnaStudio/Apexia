@@ -124,6 +124,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3306410873128677824}
     m_Modifications:
+    - target: {fileID: 271258734498594998, guid: a64e152b1b3c63b449d67f63e388cc67, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 271258734498594998, guid: a64e152b1b3c63b449d67f63e388cc67, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8773203736211845433, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 2462832148769773095, guid: a64e152b1b3c63b449d67f63e388cc67, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 2462832148769773095, guid: a64e152b1b3c63b449d67f63e388cc67, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8773203736211845433, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
     - target: {fileID: 3617398164152196150, guid: a64e152b1b3c63b449d67f63e388cc67, type: 3}
       propertyPath: m_Navigation.m_Mode
       value: 4
@@ -257,6 +273,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 3306410873128677824}
     m_Modifications:
+    - target: {fileID: 3789610225861086891, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 3789610225861086891, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8773203736211845433, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 4709137583275620735, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
+    - target: {fileID: 4709137583275620735, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -8773203736211845433, guid: 2f0d8dda9e3b350458483cca1bb54ffb, type: 2}
     - target: {fileID: 4772029410069498102, guid: 037625ad17c5a0d469efb3e47722f02e, type: 3}
       propertyPath: m_Name
       value: Password-Field

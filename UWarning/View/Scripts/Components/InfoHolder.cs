@@ -11,7 +11,7 @@ namespace UWarning.View.Conponents
 
         public void SetIcon(Sprite sprite)
         {
-            icon.enabled = sprite != null;
+            icon.gameObject.SetActive(sprite != null);
             icon.sprite = sprite;
         }
 
