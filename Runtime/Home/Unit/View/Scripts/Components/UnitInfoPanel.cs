@@ -36,7 +36,7 @@ namespace Unit.View.Components
         private static Func<UnitData, bool> CheckBookmarked;
         private static Action<UnitData, bool> OnBookmark;
 
-        public static void SetBookmarkAction(Func<UnitData, bool> checkBookmarked,Action<UnitData, bool> onBookmark)
+        public static void SetBookmarkAction(Func<UnitData, bool> checkBookmarked, Action<UnitData, bool> onBookmark)
         {
             CheckBookmarked = checkBookmarked;
             OnBookmark = onBookmark;
@@ -61,7 +61,7 @@ namespace Unit.View.Components
             else
                 installmentsBtn.gameObject.SetActive(true);
 
-            void ClickOnBookmark(bool value) => 
+            void ClickOnBookmark(bool value) =>
                 OnBookmark.Invoke(data, value);
         }
 
@@ -75,7 +75,7 @@ namespace Unit.View.Components
             galleryBtn.onClick.AddListener(() => SetGalleryAction(actions.OpenGallery));
             //unitViewBtn.onClick.AddListener(() => SetUnitViewAction(actions.OpenBalcony));
             //dollHouseBtn.onClick.AddListener(() => SetDollHouseAction(actions.OpenDollHouse));
-            goToBalconyBtn.onClick.AddListener(SetBalconyAction);
+            goToBalconyBtn.onClick.AddListener(() => SetBalconyAction(actions.OpenBalcony));
 
             OnClose = actions.Close;
 
@@ -91,11 +91,11 @@ namespace Unit.View.Components
             //void SetUnitViewAction(Action<UnitData> action) =>
             //    action.Invoke(currentCard);
 
-            //void SetDollHouseAction(Action<UnitData> action) =>
-            //    action.Invoke(currentCard);
+            void SetBalconyAction(Action<UnitData> action) =>
+                action.Invoke(currentCard);
 
-            void SetBalconyAction() =>
-                Application.OpenURL(currentCard.UnitTypeCard.ViewLink);
+            //void SetBalconyAction() =>
+            //    Application.OpenURL(currentCard.UnitTypeCard.ViewLink);
         }
 
         public override void Hide()
