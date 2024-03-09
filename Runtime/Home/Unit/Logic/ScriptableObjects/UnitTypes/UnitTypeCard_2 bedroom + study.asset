@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <Name>k__BackingField: 2 Bedrooms + Study
   <Type>k__BackingField: 3
-  <Gallery>k__BackingField: {fileID: 0}
+  <Gallery>k__BackingField: {fileID: 11400000, guid: 988543e999f57e44ca920a6562367842, type: 2}
   <DollHousePrefab>k__BackingField: {fileID: 0}
   <ViewLink>k__BackingField: 
