@@ -57,8 +57,11 @@ namespace SidePanel
         public static void Initialize(Action<float> onChangeDay, Action exit, Action openHome) =>
             view.Initialize(onChangeDay, exit, openHome);
 
-        public static void Show() =>
+        public static void Show()
+        {
+            ProfileMenuSystem.Hide();
             view.Show();
+        }
 
         public static void Hide() =>
             view.Hide();
