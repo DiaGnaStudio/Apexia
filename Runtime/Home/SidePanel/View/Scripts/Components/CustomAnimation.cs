@@ -6,25 +6,27 @@ namespace SidePanel.View.Components
     [RequireComponent(typeof(Animator))]
     internal class CustomAnimation : MonoBehaviour
     {
-        private const string SHOW_PARAMETER = "Show";
-
         private Animator _animator;
         [SerializeField] private Button _changeStateBtn;
+        [SerializeField] private string parameter = "Show";
+
+        [SerializeField] private bool initialState;
+        private bool currentState;
 
         private void Awake()
         {
             _animator = GetComponent<Animator>();
+            currentState = initialState;
 
             _changeStateBtn.onClick.AddListener(ChangeState);
 
             void ChangeState()
             {
-                bool currentValue = _animator.GetBool(SHOW_PARAMETER);
-                _animator.SetBool(SHOW_PARAMETER, !currentValue);
+                _animator.SetBool(parameter, !currentState);
             }
         }
 
         public void ForceHide() =>
-            _animator.SetBool(SHOW_PARAMETER, false);
+            _animator.SetBool(parameter, initialState);
     }
 }

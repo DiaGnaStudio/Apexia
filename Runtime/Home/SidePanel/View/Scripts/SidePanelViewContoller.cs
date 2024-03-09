@@ -54,8 +54,13 @@ namespace SidePanel.View
 
         public override void Show()
         {
-            base.Show();
+            View.Show();
             View.PagesPanel.ShowDefault();
+        }
+
+        public override void Hide()
+        {
+            View.Hide();
         }
     }
 }

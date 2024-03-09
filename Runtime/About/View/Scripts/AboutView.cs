@@ -1,10 +1,10 @@
 using About.View.Components;
 using UnityEngine;
-using UnityEngine.UI;
+using UScreens;
 
 namespace About.View
 {
-    public class AboutView : MonoBehaviour
+    public class AboutView : UPanel
     {
         [field: SerializeField] internal SectionPanel SectionPanel { get; private set; }
         [field: SerializeField] internal ControllerPanel ControllerPanel { get; private set; }

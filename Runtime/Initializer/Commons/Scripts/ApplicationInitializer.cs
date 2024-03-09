@@ -22,9 +22,14 @@ public class ApplicationInitializer : MonoBehaviour
         void SignOut()
         {
             LoginSystem.Show();
-            AboutSystem.Hide();
-            SidePanelSystem.Hide();
+            Invoke(nameof(SignOutByDelay), 1);
         }
+    }
+
+    private void SignOutByDelay()
+    {
+        AboutSystem.Hide();
+        SidePanelSystem.Hide();
     }
 
     private void Start()

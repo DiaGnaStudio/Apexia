@@ -30,5 +30,11 @@ namespace About.View
 
         public void SetCloseAction(Action action) =>
             View.CloseButton.SetAction(action);
+
+        public override void Show() => 
+            View.Show();
+
+        public override void Hide() => 
+            View.Hide();
     }
 }

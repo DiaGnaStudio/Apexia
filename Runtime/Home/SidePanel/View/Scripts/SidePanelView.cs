@@ -1,10 +1,11 @@
 using SidePanel.View.Components;
 using UnityEngine;
 using UnityEngine.UI;
+using UScreens;
 
 namespace SidePanel.View
 {
-    public class SidePanelView : MonoBehaviour
+    public class SidePanelView : UPanel
     {
         [field: SerializeField] internal PagesPanel PagesPanel { get; private set; }
         [field: SerializeField] internal DaySlider DaySlider { get; private set; }
