@@ -7,27 +7,42 @@ namespace Login.View
     {
         public override void InitializeState() { }
 
-        public override void InitializeView() { }
+        public override void InitializeView()
+        {
+            View.Panel.Initialize();
+        }
 
         public void OnChangeEmail(Action<string> onChanged) =>
-            View.Email.SetChangeInput(onChanged);
+            View.Panel.Email.SetChangeInput(onChanged);
 
         public void OnChangePassword(Action<string> onChanged) =>
-            View.Password.SetChangeInput(onChanged);
+            View.Panel.Password.SetChangeInput(onChanged);
 
         public void SetLoginAction(Action action) =>
-            View.LoginBTN.SetAction(action);
+            View.Panel.LoginBTN.SetAction(action);
 
         public void SetCloseAction(Action action) =>
             View.CloseBTN.onClick.AddListener(action.Invoke);
 
         public void SetButtonIntractable(bool value) =>
-            View.LoginBTN.SetIntractable(value);
+            View.Panel.LoginBTN.SetIntractable(value);
 
         public void ClearInput()
         {
-            View.Email.Clear();
-            View.Password.Clear();
+            View.Panel.Email.Clear();
+            View.Panel.Password.Clear();
+        }
+
+        public override void Show()
+        {
+            //base.Show();
+            View.Panel.Show();
+        }
+
+        public override void Hide()
+        {
+            View.Panel.Hide();
+            //base.Hide();
         }
     }
 }
