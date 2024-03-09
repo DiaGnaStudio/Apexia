@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea03d7ae602afeb40bbb6bbd7d2ee2f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <StaticPanel>k__BackingField: {fileID: 6258908565141212168}
+  <StaticPanel>k__BackingField: {fileID: 3899809040594971844}
   <InfoPanel>k__BackingField: {fileID: 7364716644243253823}
   <ButtonPanel>k__BackingField: {fileID: 3104286037204466550}
 --- !u!1 &9083816476334122388
@@ -128,6 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1902843944771334622}
+  - component: {fileID: 2661335007527895507}
   m_Layer: 5
   m_Name: Root
   m_TagString: Untagged
@@ -155,6 +156,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 158, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &2661335007527895507
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9083816476334122388}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &9204239767560292698
 GameObject:
   m_ObjectHideFlags: 0
@@ -164,6 +177,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6258908565141212168}
+  - component: {fileID: 6041896270775444488}
+  - component: {fileID: 3899809040594971844}
+  - component: {fileID: 1604400740455034013}
+  - component: {fileID: 6147591738687375231}
+  - component: {fileID: 8724585896894032350}
   m_Layer: 5
   m_Name: StaticPanel
   m_TagString: Untagged
@@ -191,6 +209,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 158, y: 1080}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!95 &6041896270775444488
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204239767560292698}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ef975ad745aa1f34db7acd2205bdec7c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3899809040594971844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204239767560292698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895d65fc4874ad34791f25fe42272051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideBtn: {fileID: 0}
+--- !u!114 &1604400740455034013
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204239767560292698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ef29194365ce14bb4cd2ee2a5792ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6147591738687375231
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204239767560292698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67967c1f568784946a2bcae0b70a4c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDelay: 0
+  _hideDelay: 0.7
+--- !u!114 &8724585896894032350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9204239767560292698}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8ec0b37e598644bba5e0e76ddf8d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hideParameter: Hide
+  _showParameter: Show
+  _useHideDuration: 0
 --- !u!1001 &2158663713387027598
 PrefabInstance:
   m_ObjectHideFlags: 0

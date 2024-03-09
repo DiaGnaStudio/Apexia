@@ -11,7 +11,11 @@ namespace Amenities.View
         private Action<int> OnSelect;
         private Func<int, AmenitiesInfoAsset> GetInfo;
 
-        public override void InitializeState() { }
+        public override void InitializeState()
+        {
+            View.StaticPanel.Initialize();
+            View.StaticPanel.Hide();
+        }
 
         public override void InitializeView()
         {
@@ -28,13 +32,13 @@ namespace Amenities.View
         public override void Show()
         {
             base.Show();
-            View.StaticPanel.gameObject.SetActive(true);
+            View.StaticPanel.Show();
             GoToPoint(0);
         }
 
         public override void Hide()
         {
-            View.StaticPanel.gameObject.SetActive(false);
+            View.StaticPanel.Hide();
             View.InfoPanel.Hide();
             base.Hide();
         }
@@ -48,6 +52,6 @@ namespace Amenities.View
         }
 
         public void SetParent(Transform parent) =>
-            View.StaticPanel.SetParent(parent, false);
+            View.StaticPanel.transform.SetParent(parent, false);
     }
 }
