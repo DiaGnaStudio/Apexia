@@ -11,6 +11,8 @@ namespace Surronding.View
 
         public override void InitializeView()
         {
+            View.StaticPanel.Initialize();
+
             View.SatellitePanel.Initialize();
             View.LandmarksPanel.SetAction(View.SatellitePanel.Show);
         }
@@ -25,17 +27,17 @@ namespace Surronding.View
         {
             base.Show();
 
-            View.StaticPanel.gameObject.SetActive(true);
+            View.StaticPanel.Show();
             View.SatellitePanel.Hide();
         }
 
         public override void Hide()
         {
-            View.StaticPanel.gameObject.SetActive(false);
+            View.StaticPanel.Hide();
             base.Hide();
         }
 
         public void ChangeParent(Transform parent) =>
-            View.StaticPanel.SetParent(parent, false);
+            View.StaticPanel.transform.SetParent(parent, false);
     }
 }

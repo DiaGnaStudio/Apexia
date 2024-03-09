@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4429107013210887299}
+  - component: {fileID: 1346908504977464717}
   m_Layer: 5
   m_Name: Root
   m_TagString: Untagged
@@ -38,6 +39,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 137.70174}
   m_SizeDelta: {x: 159.3, y: 323.6035}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1346908504977464717
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3615638862970460085}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &5801593301650134251
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8d1e5115f084a4ab5040693665d50b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <StaticPanel>k__BackingField: {fileID: 509246261683862488}
+  <StaticPanel>k__BackingField: {fileID: 7712684706795772961}
   <FilterPanel>k__BackingField: {fileID: 7029135844277292551}
   <LandmarksPanel>k__BackingField: {fileID: 4333942573463277088}
   <SatellitePanel>k__BackingField: {fileID: 3439665671506860664}
@@ -182,6 +195,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 509246261683862488}
+  - component: {fileID: 8057622329709622620}
+  - component: {fileID: 7712684706795772961}
+  - component: {fileID: 7633072161686758596}
+  - component: {fileID: 6505581712606031909}
+  - component: {fileID: 7253745039919024123}
   m_Layer: 5
   m_Name: StaticPanel
   m_TagString: Untagged
@@ -209,6 +227,81 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 158, y: 1080}
   m_Pivot: {x: 1, y: 0.5}
+--- !u!95 &8057622329709622620
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104694475794289928}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d3a68c0c59fc8704bbb3523bbd13e907, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &7712684706795772961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104694475794289928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 895d65fc4874ad34791f25fe42272051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hideBtn: {fileID: 0}
+--- !u!114 &7633072161686758596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104694475794289928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53ef29194365ce14bb4cd2ee2a5792ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6505581712606031909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104694475794289928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67967c1f568784946a2bcae0b70a4c5d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _showDelay: 0.7
+  _hideDelay: 0.7
+--- !u!114 &7253745039919024123
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9104694475794289928}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8ec0b37e598644bba5e0e76ddf8d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hideParameter: Hide
+  _showParameter: Show
+  _useHideDuration: 0
 --- !u!1001 &2296616226510791329
 PrefabInstance:
   m_ObjectHideFlags: 0
