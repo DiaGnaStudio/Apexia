@@ -10,8 +10,10 @@ namespace ProfileMenu.View
 
         public override void InitializeView()
         {
+            View.StaticPanel.Initialize();
+            View.StaticPanel.Hide();
+
             View.InfoPanel.Initialize();
-            View.InfoPanel.Hide();
         }
 
         public void SetData(Sprite avatar, string name) =>
@@ -27,17 +29,17 @@ namespace ProfileMenu.View
             View.InfoPanel.SetSignOutAction(action);
 
         public void SetParent(Transform parent) =>
-            View.InfoPanel.transform.SetParent(parent, false);
+            View.StaticPanel.transform.SetParent(parent, false);
 
         public override void Show()
         {
             base.Show();
-            View.InfoPanel.Show();
+            View.StaticPanel.Show();
         }
 
         public override void Hide()
         {
-            View.InfoPanel.Hide();
+            View.StaticPanel.Hide();
             base.Hide();
         }
     }
