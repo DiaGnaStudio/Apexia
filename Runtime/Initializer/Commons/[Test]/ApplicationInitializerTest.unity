@@ -728,6 +728,10 @@ PrefabInstance:
       propertyPath: state
       value: 
       objectReference: {fileID: 11400000, guid: afa30d480da80f84f8eb4fd985f8ace5, type: 2}
+    - target: {fileID: 5133754330916977067, guid: 6dc20d8594975fd48bc27b7d762a0d54, type: 3}
+      propertyPath: defaultCard
+      value: 
+      objectReference: {fileID: 11400000, guid: 01707c450e1dd6e43a2091050895ef60, type: 2}
     - target: {fileID: 5323948752398300124, guid: 6dc20d8594975fd48bc27b7d762a0d54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.2
