@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 namespace Unit.Logic.Components
 {
@@ -9,13 +10,16 @@ namespace Unit.Logic.Components
         [SerializeField] private Collider _collider;
         private Action OnClick;
 
-        public void SetSlick(Action onClick) => 
+        public void SetSlick(Action onClick) =>
             OnClick = onClick;
 
-        private void OnMouseDown() => 
-            OnClick.Invoke();
+        private void OnMouseDown()
+        {
+            if (EventSystem.current.IsPointerOverGameObject() == false)
+                OnClick.Invoke();
+        }
 
-        public void SetColliderAction(bool value)=>
+        public void SetColliderAction(bool value) =>
             _collider.enabled = value;
     }
 }
