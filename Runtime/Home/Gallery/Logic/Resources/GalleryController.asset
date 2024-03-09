@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc0e226b0fb07d243aa553f2dcb9e8e2, type: 3}
   m_Name: GalleryController
   m_EditorClassIdentifier: 
-  asset: {fileID: 11400000, guid: 988543e999f57e44ca920a6562367842, type: 2}
+  asset: {fileID: 11400000, guid: 4e9aac25e8abcef49bb97dcc7bee45a9, type: 2}
   indexStarter: 0
