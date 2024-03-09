@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 4186652481214681501}
   - component: {fileID: 2886500013495595910}
   - component: {fileID: 8731767374155533672}
+  - component: {fileID: 8514467883908102430}
   m_Layer: 5
   m_Name: Bacground
   m_TagString: Untagged
@@ -427,6 +428,18 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 5
+--- !u!225 &8514467883908102430
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3948893839336287371}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4083591807713772931
 GameObject:
   m_ObjectHideFlags: 0
@@ -658,7 +671,8 @@ GameObject:
   - component: {fileID: 8536937648850142942}
   - component: {fileID: 5023732634424455401}
   - component: {fileID: 3679820565768107578}
-  - component: {fileID: 7129122193780753548}
+  - component: {fileID: 3512581320653044635}
+  - component: {fileID: 4228217041065886531}
   m_Layer: 5
   m_Name: WarningPopup
   m_TagString: Untagged
@@ -723,6 +737,7 @@ MonoBehaviour:
   titleText: {fileID: 1825069344818472230}
   buttonHandler: {fileID: 0}
   infoHolder: {fileID: 1855792053576189005}
+  delay: 5
 --- !u!114 &3679820565768107578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -735,7 +750,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53ef29194365ce14bb4cd2ee2a5792ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7129122193780753548
+--- !u!114 &3512581320653044635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -744,9 +759,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 6185309181876964880}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3642be5420506844fa2ad5dc9eed84bc, type: 3}
+  m_Script: {fileID: 11500000, guid: 67967c1f568784946a2bcae0b70a4c5d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _showDelay: 0
+  _hideDelay: 0
+--- !u!114 &4228217041065886531
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6185309181876964880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af8ec0b37e598644bba5e0e76ddf8d68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _hideParameter: Hide
+  _showParameter: Show
+  _useHideDuration: 0
 --- !u!1 &7101522342554107282
 GameObject:
   m_ObjectHideFlags: 0
