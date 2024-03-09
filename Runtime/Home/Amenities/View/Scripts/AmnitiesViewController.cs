@@ -43,6 +43,7 @@ namespace Amenities.View
         {
             OnSelect?.Invoke(index);
             View.InfoPanel.Show();
+            View.InfoPanel.gameObject.SetActive(false);
             //View.InfoPanel.Set(GetInfo(index));
         }
 
