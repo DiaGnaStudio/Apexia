@@ -21,13 +21,12 @@ namespace CustomerInfo
             view.Initialize(SignOut, logic.GetUser, logic.Share, logic.ClearAll, logic.DeleteOrder, logic.GetAllOrders, logic.SignIn, logic.SignInAsGuest);
         }
 
-        public static void Initialzie(Action signOut,
-                                      Func<OrderInfo[]> getOrders,
+        public static void Initialzie(Func<OrderInfo[]> getOrders,
                                       Action<int> deleteBookmark,
                                       Action clearAll,
                                       Action<ClientInfo> onLoginCustomer)
         {
-            logic.SetSignAction(signOut, SignIn);
+            logic.SetSignAction(view.ShowSignUp, SignIn);
             logic.InitializeOrder(getOrders, deleteBookmark, clearAll, ShareSuccessfully, ShareFailure);
 
             void SignIn(ClientInfo customer)

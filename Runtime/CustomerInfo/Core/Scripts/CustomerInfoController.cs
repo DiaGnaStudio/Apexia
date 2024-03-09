@@ -54,7 +54,6 @@ namespace CustomerInfo.Core
         public void SignOut()
         {
             profileStorage.Add(null);
-            OnSignOut.Invoke();
         }
 
         public (Sprite avatar, string username) GetUser()

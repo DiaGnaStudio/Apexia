@@ -43,7 +43,7 @@ public class ApplicationInitializer : MonoBehaviour
         AboutSystem.Initialize(CustomerInfoSystem.Show, ShowMenus, LoginSystem.SignOut, ExitSystem.Show);
         SidePanelSystem.Initialize(ChangeDayNight, ExitSystem.Show, ShowHome);
         ProfileMenuSystem.Initialize(null, null, LoginSystem.SignOut);
-        CustomerInfoSystem.Initialzie(LoginSystem.SignOut, GetOrders, BookmarkSystem.RemoveBookmark, BookmarkSystem.RemoveAll, LoginCustomer);
+        CustomerInfoSystem.Initialzie(GetOrders, BookmarkSystem.RemoveBookmark, BookmarkSystem.RemoveAll, LoginCustomer);
 
 
         void BookmarkUnit(UnitData data, bool isBookmarked)
