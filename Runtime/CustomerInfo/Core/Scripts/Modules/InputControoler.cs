@@ -91,11 +91,11 @@ namespace CustomerInfo.Core.Module
         {
             public const string pattern = @"^\+?(\d{1,3})?[-. ]?\(?\d{3}\)?[-. ]?\d{3}[-. ]?\d{4}$";
 
-            public bool IsValid { get; private set; }
+            public bool IsValid { get; private set; } = true; // HINT: the phone number can be null
 
             public bool ValidatePhoneNumber(string value)
             {
-                IsValid = !string.IsNullOrEmpty(value) && Regex.IsMatch(value, pattern);
+                IsValid = string.IsNullOrEmpty(value) || Regex.IsMatch(value, pattern);
 
                 return IsValid;
             }
@@ -105,7 +105,7 @@ namespace CustomerInfo.Core.Module
         {
             public const string pattern = @"^[a-zA-Z\s']{2,}$";
 
-            public bool IsValid { get; private set; }
+            public bool IsValid { get; private set; } = false;
 
             public bool ValidateName(string value)
             {
