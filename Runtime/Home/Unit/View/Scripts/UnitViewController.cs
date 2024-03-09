@@ -32,6 +32,7 @@ namespace Unit.View
             {
                 var panel = View.MapPanelPool.GetActive;
                 panel.Initialize();
+                panel.transform.SetAsLastSibling();
                 panel.Show(map);
             }
 
@@ -59,6 +60,7 @@ namespace Unit.View
             {
                 var panel = View.InfoPanelPool.GetActive;
                 panel.Initialize();
+                panel.transform.SetAsFirstSibling();
                 panel.SetActions(InfoPanelActions);
                 return panel;
             }
