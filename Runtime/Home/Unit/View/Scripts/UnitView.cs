@@ -11,5 +11,7 @@ namespace Unit.View
         [field: SerializeField] internal Pool<UnitInfoPanel> InfoPanelPool { get; private set; }
         [field: SerializeField] internal Pool<UnitMapPanel> MapPanelPool { get; private set; }
         [field: SerializeField] internal Pool<UnitInstallmentsPanel> InstallmentsPanelPool { get; private set; }
+        [field: SerializeField] internal UnitBalconyPanel BalconyPanel { get; private set; }
+        [field: SerializeField] internal NoneBalconyParent NoneBalconyParent { get; private set; }
     }
 }

@@ -4,7 +4,6 @@ using Unit.Data;
 using Unit.Logic;
 using Unit.View;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UScreens;
 
 namespace Unit
@@ -24,19 +23,28 @@ namespace Unit
             view.InitializeFilter(logic.UpdateFilter);
             view.InitializeInfoPanelActions(GallerySystem.Show,
                                             logic.GoToBalcony,
-                                            OpenDollHouse,
                                             logic.UnSelectUnit);
 
             logic.SetActiveBuilding(false);
-
-            void OpenDollHouse(UnitData card) => 
-                SceneManager.LoadScene(2);
         }
 
-        public static void Initialize(Action<UnitData, bool> onBookmark, Func<int> getClientId, Func<UnitData, bool> isBookmarked)
+        public static void Initialize(Action<UnitData, bool> onBookmark, Func<int> getClientId, Func<UnitData, bool> isBookmarked, Action onShowBalcony, Action onHideBalcony)
         {
             logic.InitializeBookmark(getClientId);
             view.InitializeBookmark(onBookmark, logic.IsBookmarkEnable, isBookmarked);
+
+            view.InitializeBalconyView(ShowBalcony, HideBalcony);
+
+            void ShowBalcony()
+            {
+                onShowBalcony.Invoke();
+            }
+
+            void HideBalcony()
+            {
+                logic.SetCameraPoint();
+                onHideBalcony.Invoke();
+            }
         }
 
         public static void Show(Transform parent = null)
@@ -44,7 +52,7 @@ namespace Unit
             if (parent != null)
                 view.SetParent(parent);
             logic.SetActiveBuilding(true);
-            logic.Show();
+            logic.SetCameraPoint();
             view.Show();
         }
 

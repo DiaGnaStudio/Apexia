@@ -36,7 +36,7 @@ public class ApplicationInitializer : MonoBehaviour
     {
         ProfileMenuSystem.Load();
 
-        UnitSystem.Initialize(BookmarkUnit, GetClientId, IsBookmarked);
+        UnitSystem.Initialize(BookmarkUnit, GetClientId, IsBookmarked, SidePanelSystem.Hide, SidePanelSystem.Show);
 
         ProjectInfoSystem.SetPresenter(LoginSystem.GetPresenter);
         ProjectInfoSystem.SetCustomer(GetClientName);

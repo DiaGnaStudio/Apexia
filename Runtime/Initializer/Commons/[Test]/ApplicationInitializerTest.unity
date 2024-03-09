@@ -724,6 +724,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UCam
       objectReference: {fileID: 0}
+    - target: {fileID: 740131386990141062, guid: 6dc20d8594975fd48bc27b7d762a0d54, type: 3}
+      propertyPath: state
+      value: 
+      objectReference: {fileID: 11400000, guid: afa30d480da80f84f8eb4fd985f8ace5, type: 2}
     - target: {fileID: 5323948752398300124, guid: 6dc20d8594975fd48bc27b7d762a0d54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 47.2

@@ -9,7 +9,7 @@ namespace Unit.Test
 
         private void Awake()
         {
-            UnitSystem.Initialize(BookmarkUnit, GetClientId, (data) => false);
+            UnitSystem.Initialize(BookmarkUnit, GetClientId, (data) => false, EMPTY, EMPTY);
             Show();
 
             void BookmarkUnit(UnitData data, bool isBookmarked)
@@ -21,6 +21,11 @@ namespace Unit.Test
             }
 
             int GetClientId() => clientId;
+
+            void EMPTY()
+            {
+
+            }
         }
 
         [ContextMenu("Show")]

@@ -17,16 +17,22 @@ namespace Unit.View
 
         public override void InitializeView()
         {
+            View.NoneBalconyParent.OnShow += View.FilterPanel.Show;
+            View.NoneBalconyParent.OnHide += View.FilterPanel.Hide;
+
             View.FilterPanel.Initialize();
             View.FilterPanel.Hide();
+
+            View.BalconyPanel.Initialize();
+            View.BalconyPanel.Hide();
         }
 
         public void InitializeFilter(Action<UnitFilter> onUpdate) =>
             View.FilterPanel.SetData(onUpdate);
 
-        public void InitializeInfoPanelActions(Action<GalleryAsset> openGallery, Action<UnitData> openBalcony, Action<UnitData> openDollHouse, Action<UnitData> close)
+        public void InitializeInfoPanelActions(Action<GalleryAsset> openGallery, Action<UnitData> openBalcony, Action<UnitData> close)
         {
-            InfoPanelActions = new(GetInstallmentsPanel, GetMapPanel, openGallery, openBalcony, openDollHouse, close);
+            InfoPanelActions = new(GetInstallmentsPanel, GetMapPanel, openGallery, OpenBalcony, close);
 
             void GetMapPanel(Sprite map)
             {
@@ -42,12 +48,31 @@ namespace Unit.View
                 panel.Initialize();
                 panel.Show(data);
             }
+
+            void OpenBalcony(UnitData unitData)
+            {
+                View.NoneBalconyParent.Hide();
+                openBalcony.Invoke(unitData);
+                View.BalconyPanel.SetData(unitData.Id, unitData.Floor);
+                View.BalconyPanel.Show();
+            }
         }
 
         public void InitializeBookmark(Action<UnitData, bool> onClick, Func<bool> isIntractable, Func<UnitData, bool> isBookmarked)
         {
             BookmarkButton.Initialize(isIntractable);
             UnitInfoPanel.SetBookmarkAction(isBookmarked, onClick);
+        }
+
+        internal void InitializeBalconyView(Action showBalcony, Action hideBalcony)
+        {
+            View.BalconyPanel.Initialize(showBalcony, Hide);
+
+            void Hide()
+            {
+                View.NoneBalconyParent.Show();
+                hideBalcony.Invoke();
+            }
         }
 
         public void Show(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
@@ -89,5 +114,6 @@ namespace Unit.View
 
         public void SetParent(Transform parent) =>
             View.StaticPanel.SetParent(parent, false);
+
     }
 }

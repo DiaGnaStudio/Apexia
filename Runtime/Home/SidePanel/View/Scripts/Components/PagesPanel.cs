@@ -20,6 +20,8 @@ namespace SidePanel.View.Components
 
         private Action OnGlobalClick;
 
+        private PageButton lastPage;
+
         private void Awake()
         {
             buttons = new List<PageButton>
@@ -30,6 +32,8 @@ namespace SidePanel.View.Components
                 unitBtn,
                 galleryBtn
             };
+
+            lastPage = exploreBtn;
         }
 
         public void SetOpenActions(PageParentActions actions)
@@ -57,6 +61,7 @@ namespace SidePanel.View.Components
 
             void OnClick(PageButton button, Action<Transform> action)
             {
+                lastPage = button;
                 OnGlobalClick.Invoke();
                 action.Invoke(PageParent);
                 ActivateButtons(button);
@@ -73,6 +78,6 @@ namespace SidePanel.View.Components
             OnGlobalClick = onClick;
 
         public void ShowDefault() =>
-            exploreBtn.InvokeButton();
+            lastPage.InvokeButton();
     }
 }

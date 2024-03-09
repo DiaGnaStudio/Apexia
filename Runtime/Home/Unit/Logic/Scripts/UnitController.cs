@@ -87,7 +87,7 @@ namespace Unit.Logic
         public void UpdateFilter(UnitFilter filter) =>
             this.filter.Update(filter);
 
-        public void Show() =>
+        public void SetCameraPoint() =>
             camera.SetPoints();
 
         public bool IsBookmarkEnable() =>
