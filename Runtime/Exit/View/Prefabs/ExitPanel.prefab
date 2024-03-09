@@ -380,7 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _showDelay: 0
-  _hideDelay: 0
+  _hideDelay: 0.7
 --- !u!114 &7479809701161777010
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -14,14 +14,12 @@ namespace Exit.View
 
         public override void Show()
         {
-            base.Show();
             View.Popup.Show();
         }
 
         public override void Hide()
         {
             View.Popup.Hide();
-            base.Hide();
         }
     }
 }
