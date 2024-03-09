@@ -95,7 +95,7 @@ namespace Unit.View
         {
             base.Show();
 
-            View.StaticPanel.gameObject.SetActive(true);
+            View.StaticPanel.Show();
             View.FilterPanel.Show();
             View.InfoPanelPool.DeactiveAllInstance();
             View.MapPanelPool.DeactiveAllInstance();
@@ -104,7 +104,7 @@ namespace Unit.View
 
         public override void Hide()
         {
-            View.StaticPanel.gameObject.SetActive(false);
+            View.StaticPanel.Hide();
             View.FilterPanel.Hide();
             View.InfoPanelPool.DeactiveAllInstance();
             View.MapPanelPool.DeactiveAllInstance();
@@ -113,7 +113,7 @@ namespace Unit.View
         }
 
         public void SetParent(Transform parent) =>
-            View.StaticPanel.SetParent(parent, false);
+            View.StaticPanel.transform.SetParent(parent, false);
 
     }
 }
