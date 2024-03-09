@@ -45,7 +45,7 @@ namespace Unit.View.Components
         public void SetData(UnitData data, UnitInstallmentsData installmentsData, Sprite map)
         {
             nameText.SetText(data.Name);
-            areaText.Set(data.Area.ToString());
+            areaText.Set(string.Format("{0} SQM", data.Area));
             typeText.Set(data.UnitTypeCard.Name);
             availabilityText.Set(data.Availability.ToString());
             //orientationText.Set(data.Orientation.ToString());
